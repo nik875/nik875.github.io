@@ -45,7 +45,7 @@ exclude:
   - hidden
 
 include:
-  - _posts/*
+  - _posts/.2022-07-16-starting-this-website-assets
 
 # exclude
 #   - .sass-cache/
