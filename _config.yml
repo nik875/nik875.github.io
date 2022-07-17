@@ -44,6 +44,9 @@ plugins:
 exclude:
   - hidden
 
+include:
+  - .assets
+
 # exclude
 #   - .sass-cache/
 #   - .jekyll-cache/
