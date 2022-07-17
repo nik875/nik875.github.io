@@ -42,7 +42,6 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 # exclude:
-#   - hidden/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
