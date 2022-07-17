@@ -63,11 +63,11 @@ Below are some screenshots of what the site looks like right now:
 
 ### Main Page
 
-![](/_posts/.2022-07-16-starting-this-website-assets/2022-07-17-13-47-58-image.png){:class="img-responsive"}
+![](2022-07-16-starting-this-website-assets/2022-07-17-13-57-56-image.png)
 
 ### Posts Page
 
-![](/_posts/.2022-07-16-starting-this-website-assets/2022-07-17-13-48-22-image.png){:class="img-responsive"}
+![](2022-07-16-starting-this-website-assets/2022-07-17-13-58-03-image.png)
 
 ## What's Next?
 
