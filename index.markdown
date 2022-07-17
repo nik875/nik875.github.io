@@ -5,6 +5,6 @@
 layout: page
 ---
 
-# Hi there!
+**Hi there!**
 
 I'm Nikhil, and this is my (work in progress) website.
