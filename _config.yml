@@ -45,7 +45,7 @@ exclude:
   - hidden
 
 include:
-  - .assets
+  - _posts/*
 
 # exclude
 #   - .sass-cache/
