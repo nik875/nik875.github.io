@@ -44,8 +44,8 @@ plugins:
 exclude:
   - hidden
 
-#include:
-#  - /**/*assets/
+include:
+  - /**/*assets/
 
 # exclude
 #   - .sass-cache/
