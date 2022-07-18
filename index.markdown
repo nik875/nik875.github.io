@@ -8,8 +8,6 @@ title: Hi there!
 
 ## I'm Nikhil, and this is my website.
 
----
-
 I suppose the first question that I should answer for you is "What exactly is this website?" I think it's best if I let my very first post (over on the Posts page) do the explaining for me:
 
 > The original idea for this website came up two days ago, when I was looking at some of my friends’ own personal websites. I thought it’d be a good idea to have a single place where I can put my best metaphorical foot forward for job recruiters, interviewers, and anyone else who might be interested in me for whatever reason. But I wanted it to be more than just an interactive resumé; I wanted it to be a way for you, the reader, to get to know me as a person by following along as I work through all of the projects that catch my interest.
