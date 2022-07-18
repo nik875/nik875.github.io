@@ -18,7 +18,7 @@ Based on that, I'm going to make the (potentially dangerous) assumption that you
 
 ## Who I Am
 
-As mentioned in my <a href="files/Resume.pdf" download>resume</a>, I like to think of myself as a **Polymathic Data Scientist.** That's because both my professional experiences and my personal interests span many disciplines. In my 18 years on this planet, I've…
+As mentioned in my <a href="files/Resume.pdf" download>resumé</a>, I like to think of myself as a **Polymathic Data Scientist.** That's because both my professional experiences and my personal interests span many disciplines. In my 18 years on this planet, I've…
 
 1. Finished construction of a [satellite](https://activities.tjhsst.edu) that's been cleared for launch to Low-Earth Orbit in October of 2022,
 
