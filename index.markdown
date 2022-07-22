@@ -8,7 +8,7 @@ title: Hi there!
 
 ## I'm Nikhil, and this is my website.
 
-I suppose the first question that I should answer for you is "What exactly is this website?" I think it's best if I let my very first post (over on the Posts page) do the explaining for me:
+I suppose the first question that I should answer for you is "What exactly is this website?" I think it's best if I let my very first post (over on the [Posts](https://nik875.github.io/post_home.html) page) do the explaining for me:
 
 > The original idea for this website came up two days ago, when I was looking at some of my friends’ own personal websites. I thought it’d be a good idea to have a single place where I can put my best metaphorical foot forward for job recruiters, interviewers, and anyone else who might be interested in me for whatever reason. But I wanted it to be more than just an interactive resumé; I wanted it to be a way for you, the reader, to get to know me as a person by following along as I work through all of the projects that catch my interest.
 
@@ -28,7 +28,7 @@ As mentioned in my <a href="files/Resume.pdf" download>resumé</a>, I like to th
 
 4. Conducted independent microbial genomics research into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
 
-And many more, with even more projects currently in the pipeline.
+And many more (see the [Projects](https://nik875.github.io/projects.html) page for a full list), with even more projects currently in the pipeline.
 
 ---
 
@@ -42,4 +42,4 @@ This desire is what fueled my decision to pursue a CS degree at The University o
 
 ## Ready to Take the First Step?
 
-Connect with me on LinkedIn if you'd like to get in touch: [https://www.linkedin.com/in/nikhil-kalidasu-848719245/](https://www.linkedin.com/in/nikhil-kalidasu-848719245/). I'm also on [Instagram](https://www.instagram.com/nik_kal8772/) if you're interested in seeing some occasional updates on my projects (though there's also the [Posts](https://nik875.github.io/post_home.html) tab of this website and the RSS feed at the bottom). And if you'd like to see some of my contributions to the open-source community, check out my [GitHub](https://github.com/nik875/).
+Connect with me on LinkedIn if you'd like to get in touch: [https://www.linkedin.com/in/nikhil-kalidasu/](https://www.linkedin.com/in/nikhil-kalidasu/). I'm also on [Instagram](https://www.instagram.com/nik_kal8772/) if you're interested in seeing some occasional updates on my projects (though there's also the [Posts](https://nik875.github.io/post_home.html) tab of this website and the RSS feed at the bottom). And if you'd like to see some of my contributions to the open-source community, check out my [GitHub](https://github.com/nik875/).

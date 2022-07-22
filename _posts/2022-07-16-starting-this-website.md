@@ -74,7 +74,3 @@ Below are some screenshots of what the site looks like right now:
 I'm pretty happy with where I got, considering that two days ago there was literally no site at all. But this is far from done. The very first thing I'll have to do is completely overhaul the color scheme on this theme. I don't know if there's a dark mode for Minima, but I'll either have to switch to that or make the changes myself, because the whiteness on this is blinding. I'll also have to actually create an interactive resumé (which means I'll have to update my non-interactive resume…). Once all that is done, I can declare a "formal release" and publicize this site on my socials (speaking of, I'll have to add links to those somewhere…).
 
 The point is, I've got stuff to do. So in the meantime, feel free to subscribe to my RSS feed (which theoretically works) to get more updates on my progress, and hear about my future projects as I start them.
-
----
-
-Oh, final task: I need to figure out how to close these posts.
