@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Vex Robotics
-permalink: /projects/vex
+permalink: /projects/vex/
 ---
 
 ## Middle School
