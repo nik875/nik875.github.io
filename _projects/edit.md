@@ -1,7 +1,7 @@
 ---
 layout: page
 title: EDIT ML
-permalink: "/projects/edit/"
+description: Between my junior and senior high school years, I worked on a small team to conduct novel research into image unmasking at Dartmouth’s EDIT ML internship.
 ---
 
 In the summer after my junior year of high school, I worked on the [EDIT ML internship](https://www.dartmouth-hitchcock.org/pathology/research#edit) with Dartmouth College. The program gave me the opportunity to work with experts in the field of computational pathology on real cancer research that could potentially lead to faster and more accurate diagnoses for cancer patients. I worked on a team of three high school students total under [Dr. Joshua Levy](https://geiselmed.dartmouth.edu/epidemiology/profile/joshua-levy-phd/).

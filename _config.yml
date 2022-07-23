@@ -47,14 +47,15 @@ plugins:
 exclude:
   - hidden
 
-# exclude
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+show_excerpts: yes
+
+collections:
+  projects:
+    description: yes
+    order:
+      - tjsp.md
+      - senior-research.md
+      - edit.md
+      - vex-robotics.md
+      - open-source.md
+    output: true

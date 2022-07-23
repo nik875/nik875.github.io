@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Vex Robotics
-permalink: "/projects/vex/"
+description: I personally competed in the Vex Robotics Competition in all three of my middle school years, and coached middle school team for three of my high school years.
 ---
 
 ## Middle School
