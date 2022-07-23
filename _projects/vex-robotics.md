@@ -59,7 +59,7 @@ This year of competition was unique in Vex's history because of the pandemic. No
 
 My involvement was much less this year due to COVID-19 and the pressures of junior year, but the team proved that they didn't need it, winning the Virginia State Championship and performing incredibly well at the virtual worlds competition.
 
-<video controls><source src="vex-robotics-assets/change-up.mp4">Your browser does not support the video tag.</video>
+<iframe width="420" height="315" src="/assets/vex-robotics-assets/change-up.mp4" frameborder="0" allowfullscreen></iframe>
 *The team's autonomous skills run, executed entirely without driver control.*
 
 ### [Tipping Point](https://www.youtube.com/watch?v=H8XcvADUXTE&t=1s&ab_channel=VEXRobotics), 2021-2022
@@ -85,7 +85,7 @@ The middle school competition took place over two days, and our performance foll
 
 So that night, my co-coach and I did the same thing that we did at states: rallied the team, gave them a talk about confidence, and got things moving again. We worked very late into the night, slowly solving issues at their root one by one. The next day, we performed far better, winning incredibly difficult matchups and showing the best teams what we were capable of. We ended up losing in the quarterfinals of our division's elimination rounds because of unforeseen randomness in alliance selection, but that outcome doesn't really bother me. I know that our entire team performed at its best, and at the end of the day, that's what I value in an experience such as this.
 
-<video controls><source src="vex-robotics-assets/tipping-point.mov">Your browser does not support the video tag.</video>
+<iframe width="420" height="315" src="/assets/vex-robotics-assets/tipping-point.mov" frameborder="0" allowfullscreen></iframe>
 *Slow motion video of our robot's game-changing 0.8 second autonomous goal rush, tested at home before the World Championship.*
 
 ![](/assets/vex-robotics-assets/2022-07-19-18-59-46-image.png){:class="img-responsive"}
