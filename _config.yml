@@ -53,9 +53,9 @@ collections:
   projects:
     description: yes
     order:
-      - tjsp.md
-      - senior-research.md
-      - edit.md
-      - vex-robotics.md
-      - open-source.md
+      - _projects/tjsp.md
+      - _projects/senior-research.md
+      - _projects/edit.md
+      - _projects/vex-robotics.md
+      - _projects/open-source.md
     output: true
