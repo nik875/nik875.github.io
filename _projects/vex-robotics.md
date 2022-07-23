@@ -86,7 +86,7 @@ The middle school competition took place over two days, and our performance foll
 
 So that night, my co-coach and I did the same thing that we did at states: rallied the team, gave them a talk about confidence, and got things moving again. We worked very late into the night, slowly solving issues at their root one by one. The next day, we performed far better, winning incredibly difficult matchups and showing the best teams what we were capable of. We ended up losing in the quarterfinals of our division's elimination rounds because of unforeseen randomness in alliance selection, but that outcome doesn't really bother me. I know that our entire team performed at its best, and at the end of the day, that's what I value in an experience such as this.
 
-<video controls><source src="/assets/vex-robotics-assets/tipping-point.mov">Your browser does not support the video tag.</video>
+<video controls><source src="/assets/vex-robotics-assets/tipping-point.m4v">Your browser does not support the video tag.</video>
 *Slow motion video of our robot's game-changing 0.8 second autonomous goal rush, tested at home before the World Championship.*
 
 ![](/assets/vex-robotics-assets/2022-07-19-18-59-46-image.png){:class="img-responsive"}
