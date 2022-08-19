@@ -6,7 +6,7 @@ description: Between my junior and senior high school years, I worked on a small
 
 In the summer after my junior year of high school, I worked on the [EDIT ML internship](https://www.dartmouth-hitchcock.org/pathology/research#edit) with Dartmouth College. The program gave me the opportunity to work with experts in the field of computational pathology on real cancer research that could potentially lead to faster and more accurate diagnoses for cancer patients. I worked on a team of three high school students total under [Dr. Joshua Levy](https://geiselmed.dartmouth.edu/epidemiology/profile/joshua-levy-phd/).
 
-Our research focused on a small portion of a larger cancer diagnosis workflow. When pathologists study disease progression in patients, they often conduct biopsies to study tissue hidden beneath the skin. This tissue is subsequently imaged and studied to identify where the tumor is located and how severe it is. Because human eyes can sometimes be fallible, many attempts have been made to automate the tumor detection process using machine learning classifiers.
+Our research focused on a small portion of a larger cancer diagnosis workflow. When pathologists study disease progression in patients, they often conduct biopsies to study tissue hidden beneath the skin. This tissue is subsequently imaged and studied to identify where the tumor is located and how severe it is. Because human analysis can sometimes be fallible, many attempts have been made to automate the tumor detection process using machine learning classifiers.
 
 ![](/assets/edit-assets/2022-07-18-22-32-01-image.png){:class="img-responsive"}
 *A whole-slide tissue image being broken into 256x256 units, each of which gets classified as benign or malignant.*
