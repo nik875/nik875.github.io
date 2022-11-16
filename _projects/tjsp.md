@@ -79,6 +79,12 @@ In mid-July, some of our younger members flew to Houston, Texas, to integrate RE
 ![](/assets/tjsp-assets/2022-07-23-22-01-08-image.png){:class="img-responsive"}
 *REVERB at Nanoracks' integration facility*
 
+#### Publications
+
+I was directly involved in writing two major publications: one studying the experiences of other high school CubeSat programs, and another sharing our own experiences and lessons learned with others in the small satellite community. The first was accepted and published at the Small Satellite Conference in Logan, Utah in the fall of 2022. Our entire team visited and presented our work for a full 15-minute timeslot alongside universities like MIT and Georgia Tech. We also manned a university-level booth and took advantage of the opportunity to secure funding, sponsorships, and support for future missions. Many other CubeSat teams in attendance, both at the high school and at the university levels, gave us accolades about how accurately our research captured their real experiences. See the full paper [here](https://digitalcommons.usu.edu/smallsat/2022/all2022/77/). Also take a look at [this interview](https://m.youtube.com/watch?v=MCqxMAmE64E&feature=youtu.be) I did during the conference where I and a few others on my team answered questions about our experiences.
+
+My second publication was a recollection of our experiences building a CubeSat without a kit as a high school team, and an explanation of the problems we faced and our approaches to solving them. This was accepted into IEEE AeroConf's conference proceedings and will be published in 2023. A huge amount of effort went into this from many members of our team and our results were quite interesting, so I strongly recommend reading through the full paper when possible.
+
 #### Launch
 
 As of the time of writing, REVERB is still sitting in a Nanoracks facility, waiting to be launched into space this October. I'll update this page once that happens (with pictures!).
@@ -87,4 +93,4 @@ As of the time of writing, REVERB is still sitting in a Nanoracks facility, wait
 
 ## What's Next?
 
-TJ Space Program has moved forward with the missions that I started, and hopefully will create new missions as those get completed. For me and the others who graduated from the program, we all intend to be as much of a resource for future generations as we can so that knowledge and skills can keep accumulating. I loved the experience of working on REVERB, and I intend to continue working on CubeSats at UT Austin's Texas Space Laboratory.
+TJ Space Program has moved forward from TJREVERB to new missions, and hopefully will start more new missions as those get completed. For me and the others who graduated from the program, we all intend to be as much of a resource for future generations as we can so that knowledge and skills can keep accumulating. My time at REVERB taught me how to lead people and build a community, and I hope to use those skills in the future wherever I end up going.
