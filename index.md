@@ -18,13 +18,10 @@ Based on that, I'm going to make the (potentially dangerous) assumption that you
 
 As mentioned in my <a href="files/Resume.pdf" download>resumé</a>, I like to think of myself as a **Polymathic Data Scientist.** That's because both my professional experiences and my personal interests span many disciplines. In my 18 years on this planet, I've…
 
-1. Finished construction of a [satellite](https://activities.tjhsst.edu) that's been cleared for launch to Low-Earth Orbit in October of 2022,
-
-2. [Collected DNA samples](https://tjhsst.fcps.edu/features/tj-educational-experiences-collecting-samples-jefferson-memorial-and-arlington-national) from the roof of the Jefferson memorial and Arlington National Cemetery's amphitheater,
-
-3. Coached a middle school [Vex Robotics team](https://www.lcps.org/site/default.aspx?PageType=3&ModuleInstanceID=337038&ViewID=7b97f7ed-8e5e-4120-848f-a8b4987d588f&RenderLoc=0&FlexDataID=424529&PageID=241726) that went to the Words level three years in a row and won the Virginia state championship two years in a row,
-
-4. Conducted independent microbial genomics research into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
+- Finished construction of a [satellite](https://activities.tjhsst.edu) that's been cleared for launch to Low-Earth Orbit in October of 2022,
+- [Collected DNA samples](https://tjhsst.fcps.edu/features/tj-educational-experiences-collecting-samples-jefferson-memorial-and-arlington-national) from the roof of the Jefferson memorial and Arlington National Cemetery's amphitheater,
+- Conducted independent microbial genomics research into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
+- Joined the [Texas Rocket Engineering Lab](https://www.texasrocketlab.com/) where I currently work as a systems engineering team member.
 
 And many more (see the [Projects](https://nik875.github.io/projects.html) page for a full list), with even more projects currently in the pipeline.
 
@@ -32,7 +29,7 @@ And many more (see the [Projects](https://nik875.github.io/projects.html) page f
 
 My overwhelming desire in life is to **do cool stuff.** That could mean making glow-in-the-dark bacteria using bacterial transformation in AP Biology class, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even learning how to use Jekyll and code in HTML in order to build this website.
 
-This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivates me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé; it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can do **more** cool stuff. It's a call for **you** to get in touch so that together, we can make something happen. It's a call for **you** to join me on my quest to make a difference, because together, we can change the world.
+This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivated me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé; it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can do **more** cool stuff. It's a call for **you** to get in touch so that together, we can make something happen. It's a call for **you** to join me on my quest to make a difference, because together, we can change the world.
 
 ## Ready to Take the First Step?
 
