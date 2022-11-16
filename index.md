@@ -30,14 +30,10 @@ And many more (see the [Projects](https://nik875.github.io/projects.html) page f
 
 ## What I Want
 
-My overwhelming desire in life is to **Do Cool Stuff.** That could mean making glow-in-the-dark bacteria using bacterial transformation in AP Biology class, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even learning how to use Jekyll and code in HTML in order to build this website.
+My overwhelming desire in life is to **do cool stuff.** That could mean making glow-in-the-dark bacteria using bacterial transformation in AP Biology class, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even learning how to use Jekyll and code in HTML in order to build this website.
 
-This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivates me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé; it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can Do **More** Cool Stuff. It's a call for **you** to get in touch so that together, we can make something happen. It's a call for **you** to join me on my quest to make a difference, because together, we can change the world.
+This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivates me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé; it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can do **more** cool stuff. It's a call for **you** to get in touch so that together, we can make something happen. It's a call for **you** to join me on my quest to make a difference, because together, we can change the world.
 
 ## Ready to Take the First Step?
 
 Connect with me on LinkedIn if you'd like to get in touch: [https://www.linkedin.com/in/nikhil-kalidasu/](https://www.linkedin.com/in/nikhil-kalidasu/). I'm also on [Instagram](https://www.instagram.com/nik_kal8772/) if you're interested in seeing some occasional updates on my projects (though there's also the [Posts](https://nik875.github.io/post_home.html) tab of this website and the RSS feed at the bottom). And if you'd like to see some of my contributions to the open-source community, check out my [GitHub](https://github.com/nik875/).
-
----
-
-This webpage is still under active development, so please pardon my dust!

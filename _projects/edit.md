@@ -14,6 +14,7 @@ Our research focused on a small portion of a larger cancer diagnosis workflow. W
 Creating a simple tumor vs. non-tumor classifier is simple and for the most part a solved problem. But one remaining issue that existing tumor classification models face is that the data they're trained on often includes ink annotations created by pathologists to easily identify the tumor in an image when communicating with their patients or other pathologists.
 
 ![](/assets/edit-assets/2022-07-18-22-45-14-image.png){:class="img-responsive"}
+
 *A whole-slide image that has been annotated with green ink to show the location of cancerous cells.*
 
 The obvious problem here is that models can learn to cheat using the ink annotations instead of actually learning to identify cancerous areas of a whole slide biopsy image. This means that when they face real-world data that hasn't been annotated by pathologists, they perform far worse than they did on the training dataset. Our research attempted to solve this problem using domain adaptation: training a model on one dataset such that it can be applied to a different dataset.
