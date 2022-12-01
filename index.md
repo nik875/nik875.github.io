@@ -20,14 +20,14 @@ As mentioned in my <a href="files/Resume.pdf" download>resumé</a>, I like to th
 
 - Finished construction of a [satellite](https://activities.tjhsst.edu/cubesat/) that's been cleared for launch to Low-Earth Orbit in October of 2022,
 - [Collected DNA samples](https://tjhsst.fcps.edu/features/tj-educational-experiences-collecting-samples-jefferson-memorial-and-arlington-national) from the roof of the Jefferson memorial and Arlington National Cemetery's amphitheater,
-- Conducted independent microbial genomics research into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
+- Conducted [independent microbial genomics research](https://nik875.github.io/projects/senior-research.html) into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
 - Joined the [Texas Rocket Engineering Lab](https://www.texasrocketlab.com/) where I currently work as a systems engineering team member.
 
 And many more (see the [Projects](https://nik875.github.io/projects.html) page for a full list), with even more projects currently in the pipeline.
 
 ## What I Want
 
-My overwhelming desire in life is to **do cool stuff.** That could mean making glow-in-the-dark bacteria using bacterial transformation in AP Biology class, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even learning how to use Jekyll and code in HTML in order to build this website.
+My overwhelming desire in life is to **do cool stuff.** That could mean making glow-in-the-dark bacteria using bacterial transformation in AP Biology, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even learning how to use Jekyll and code in HTML in order to build this website.
 
 This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivated me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé; it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can do **more** cool stuff. It's a call for **you** to get in touch so that together, we can make something happen. It's a call for **you** to join me on my quest to make a difference, because together, we can change the world.
 

@@ -26,11 +26,11 @@ But aside from making my own life easier, using these open source services in fr
 
 ### Enhancing Productivity
 
-I can't even imagine what my life would be like without open source software like Git, Vim, and [Vimium](https://vimium.github.io/) that streamline my productivity. I spend far less time making my computer do what I want and far more time making high-level decisions about code architecture because of these tools. Daily-driving Linux offers even more customization and power on x86 PCs, but Apple's unique hardware in M1-family Macs isn't supported by many existing distributions and the Asahi Linux project still has a long ways to go, so for now I don't have this option.
+I can't even imagine what my life would be like without open source software like Git, Vim, and [Vimium](https://vimium.github.io/) that streamline my productivity. I spend far less time making my computer do what I want and far more time making high-level decisions about code architecture because of these tools. Daily-driving Linux offers even more customization and power on x86 PCs, but Apple's unique hardware in M1-family Macs isn't supported by many existing distributions and the Asahi Linux project still has a long way to go, so for now I don't have this option.
 
 ### Taking Control of My Hardware
 
-Perhaps the best way I've used open source software is to free my hardware from Windows' walled garden. In a [series of posts on my Instagram](https://www.instagram.com/p/Ccu1AjnuSHp/), I share how I converted a worthless old laptop into a functional secure server. Reducing e-waste and escaping from Windows' bloatware are just two reasons I love Linux.
+Perhaps the best way I've used open source software is to free my hardware from Windows' walled garden. In a [series of posts on my Instagram](https://www.instagram.com/p/Ccu1AjnuSHp/), I share how I converted a worthless old laptop into a functional secure server. Reducing e-waste and escaping from Windows' planned obsolescence are just two of the many reasons I love Linux.
 
 ---
 

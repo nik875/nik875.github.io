@@ -11,7 +11,7 @@ Our research focused on a small portion of a larger cancer diagnosis workflow. W
 ![](/assets/edit-assets/2022-07-18-22-32-01-image.png){:class="img-responsive"}
 *A whole-slide tissue image being broken into 256x256 units, each of which gets classified as benign or malignant.*
 
-Creating a simple tumor vs. non-tumor classifier is simple and for the most part a solved problem. But one remaining issue that existing tumor classification models face is that the data they're trained on often includes ink annotations created by pathologists to easily identify the tumor in an image when communicating with their patients or other pathologists.
+Creating a simple tumor vs. non-tumor classifier is easy and for the most part a solved problem. But one remaining issue that existing tumor classification models face is that the data they're trained on often includes ink annotations created by pathologists to easily identify the tumor in an image when communicating with their patients or other pathologists.
 
 ![](/assets/edit-assets/2022-07-18-22-45-14-image.png){:class="img-responsive"}
 
