@@ -18,6 +18,8 @@ There's just one problem: those "incredibly though challenges" are actually real
 
 <video controls><source src="/assets/2022-11-17-solving-recaptcha-assets/captcha-solver.mp4">Your browser does not support the video tag.</video>
 
+*A low-effort recording of my CAPTCHA solver that I definitely did not make while in class. Bonus points: Asahi Linux running on my Mac.*
+
 This bot uses Selenium to control a web browser and interface with the reCAPTCHA element on screen. It first tries to simply get through by clicking the checkbox, and when that fails, it requests an audio challenge, downloads the audio, passes it through a standard Python speech recognition library (other guides even suggested using Google's own speech recognition API), and puts the answer in the text field. It then hits submit and voila, CAPTCHA solved. The code here to actually solve the CAPTCHA is scarily simple:
 
 ```python
