@@ -21,20 +21,20 @@ There's just one problem: those "incredibly though challenges" are actually real
 This bot uses Selenium to control a web browser and interface with the reCAPTCHA element on screen. It first tries to simply get through by clicking the checkbox, and when that fails, it requests an audio challenge, downloads the audio, passes it through a standard Python speech recognition library (other guides even suggested using Google's own speech recognition API), and puts the answer in the text field. It then hits submit and voila, CAPTCHA solved. The code here to actually solve the CAPTCHA is scarily simple:
 
 ```python
-        request.urlretrieve(page.get_audio_src(), self.utils.path('captcha.mp3'))  # Download audio for this challenge
-        # Convert mp3 to wav to improve quality for speech recognition
-        pydub.AudioSegment.from_mp3(self.utils.path('captcha.mp3')).export(self.utils.path('captcha.wav'), format='wav')
+request.urlretrieve(page.get_audio_src(), self.utils.path('captcha.mp3'))  # Download audio for this challenge
+# Convert mp3 to wav to improve quality for speech recognition
+pydub.AudioSegment.from_mp3(self.utils.path('captcha.mp3')).export(self.utils.path('captcha.wav'), format='wav')
 
-        # Speech recognition
-        recognizer = Recognizer()
-        recaptcha_audio = AudioFile('captcha.wav')
-        with recaptcha_audio as source:
-            audio = recognizer.record(source)
-        os.system('rm captcha.wav captcha.mp3')  # Delete captcha audio files once no longer necessary
-        try:
-            text = recognizer.recognize_google(audio)
-        except speech_recognition.UnknownValueError:  # If speech not recognized
-            # Code to click button to request new challenge
+# Speech recognition
+recognizer = Recognizer()
+recaptcha_audio = AudioFile('captcha.wav')
+with recaptcha_audio as source:
+    audio = recognizer.record(source)
+os.system('rm captcha.wav captcha.mp3')  # Delete captcha audio files once no longer necessary
+try:
+    text = recognizer.recognize_google(audio)
+except speech_recognition.UnknownValueError:  # If speech not recognized
+    # Code to click button to request new challenge
 ```
 
 The hardest part is actually interfacing with the website in the first place and finding the right elements to click. With Selenium's find_elements() searches and inspect element, this is a tedious problem to solve, but not a difficult one. I was able to put this solver together in less than a day of total work.
