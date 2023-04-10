@@ -18,7 +18,7 @@ Based on that, I'm going to make the (potentially dangerous) assumption that you
 
 As mentioned in my <a href="files/Resume.pdf" download>resumé</a>, I like to think of myself as a **Polymathic Data Scientist.** That's because both my professional experiences and my personal interests span many disciplines. In my 18 years on this planet, I've…
 
-- Finished construction of a [satellite](https://activities.tjhsst.edu/cubesat/) that's been cleared for launch to Low-Earth Orbit in October of 2022,
+- Finished construction of a [satellite](https://activities.tjhsst.edu/cubesat/) that launched to Low-Earth Orbit in November of 2022,
 - [Collected DNA samples](https://tjhsst.fcps.edu/features/tj-educational-experiences-collecting-samples-jefferson-memorial-and-arlington-national) from the roof of the Jefferson memorial and Arlington National Cemetery's amphitheater,
 - Conducted [independent microbial genomics research](https://nik875.github.io/projects/senior-research.html) into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
 - Joined the [Texas Rocket Engineering Lab](https://www.texasrocketlab.com/) where I currently work as a systems engineering team member.
