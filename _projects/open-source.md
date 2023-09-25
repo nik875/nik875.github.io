@@ -46,6 +46,6 @@ The GitHub repository for [TJ REVERB's flight software](https://github.com/TJREV
 
 [pacmc](https://github.com/jakobkmar/pacmc) is a package manager (in the style of apt and pacman) for Minecraft mods. It's something simple that I came across while researching a better way to install mods for the game, but I quickly fell in love with the project and its community. pacmc was where I made my first open source contribution to a project that I didn't start, so it'll always be somewhat special to me.
 
-### Asahi Linux
+### smartshell
 
-The [Asahi Linux](https://github.com/AsahiLinux) project is a group of developers attempting to port Linux to Apple Silicon Macs. I've had my eyes on this for a while because the ability to run Linux bare metal on M1 Macs would help me out a ton. So far, I've mostly just been watching progress in the project's IRC channel and streams from its biggest players. I've definitely been interested in getting more involved in the future, though.
+My smartshell implementation is completely open source. A more detailed explanation of what exactly this is and how it works is available on the [GitHub](https://github.com/nik875/smartshell) and on [the posts page](https://nik875.github.io/2023/09/24/smartshell.html). Also check out [this very unprofessional demo](https://www.youtube.com/watch?v=xlufPt5SHMQ).
