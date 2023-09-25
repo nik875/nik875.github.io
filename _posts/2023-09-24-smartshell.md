@@ -34,9 +34,9 @@ The agent's architecture was heavily inspired by [this paper](https://arxiv.org/
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xlufPt5SHMQ?si=yFOrVyUKiyKZ3oYK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Cool, right? No? Well screw you, building that cost me a lot of hours and a whole letter grade on my Architecture exam. I really, really hate that class.
+Cool, right? Building that cost me a lot of hours and a whole letter grade on my Architecture exam. I really, really hate that class.
 
-I think it's cool anyway. I think people who are less familiar with the command line might actually be willing to pay the API fees for this, so that they can feel safer, more confident, and learn the things they need to know more easily. Maybe I could make a business out of this...
+I think people who are less familiar with the command line might actually be willing to pay the API fees for this, so that they can feel safer, more confident, and learn the things they need to know more easily. Maybe I could make a business out of this...
 
 ### Final Thoughts
 
