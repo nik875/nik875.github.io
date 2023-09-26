@@ -27,7 +27,7 @@ And many more (see the [Projects](https://nik875.github.io/projects.html) page f
 
 ## What I Want
 
-My overwhelming desire in life is to **do cool stuff.** That could mean making glow-in-the-dark bacteria using bacterial transformation in Biology class, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even learning how to use Jekyll and code in HTML in order to build this website.
+My overwhelming desire in life is to **do cool stuff.** That could mean [creating an intelligent "smartshell" powered by ChatGPT](https://nik875.github.io/2023/09/24/smartshell.html), [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even [learning how to use Jekyll and code in HTML in order to build this website](https://nik875.github.io/2022/11/16/finishing-this-website.html).
 
 This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivated me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé: it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can do more cool stuff. It's a call for you to get in touch so that together, we can make something happen. It's a call for you to join me on my quest to make a difference, because together, we can change the world.
 
