@@ -23,11 +23,11 @@ As mentioned in my <a href="files/Resume.pdf" download>resumé</a>, I like to th
 - Conducted [independent microbial genomics research](https://nik875.github.io/projects/senior-research.html) into DNA representation and visualization using machine learning (paper upcoming), sparking my ongoing love for research and data science,
 - Joined the [Texas Rocket Engineering Lab](https://www.texasrocketlab.com/) where I currently work as a systems integration lead.
 
-And many more (see the [Projects](https://nik875.github.io/projects.html) page for a full list), with even more projects currently in the pipeline.
+And many more (see the [Projects](https://nik875.github.io/projects.html) page for some of the biggest ones and the [Posts](https://nik875.github.io/post_home.html) page for more regular updates), with even more currently in the pipeline.
 
 ## What I Want
 
-My overwhelming desire in life is to **do cool stuff.** That could mean [creating an intelligent "smartshell" powered by ChatGPT](https://nik875.github.io/2023/09/24/smartshell.html), [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even [learning how to use Jekyll and code in HTML in order to build this website](https://nik875.github.io/2022/11/16/finishing-this-website.html).
+My overwhelming desire in life is to **do cool stuff.** That could mean [creating an intelligent "smartshell"](https://nik875.github.io/2023/09/24/smartshell.html) powered by ChatGPT, [converting some worthless old hardware](https://www.instagram.com/p/Ccu1AjnuSHp/) into a Linux-powered encrypted network storage device, or even [learning how to use Jekyll and code in HTML in order to build this website](https://nik875.github.io/2022/11/16/finishing-this-website.html).
 
 This desire is what fueled my decision to pursue a CS degree at The University of Texas at Austin. It's what motivated me to attend the [2022 Small Satellite Conference](https://smallsat.org/) in Logan, Utah and present the satellite I've worked so hard for. And it's why I'm publicizing my accomplishments on this website. Because this website is more than an interactive resumé: it's a call for **you,** dear reader, to **reach out to me** with any opportunities you have where I can do more cool stuff. It's a call for you to get in touch so that together, we can make something happen. It's a call for you to join me on my quest to make a difference, because together, we can change the world.
 
