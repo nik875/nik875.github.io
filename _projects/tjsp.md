@@ -89,7 +89,7 @@ A third publication about the technical design and challenges we faced has been 
 
 #### Public Appearances
 
-[Here's](https://m.youtube.com/watch?v=MCqxMAmE64E&feature=youtu.be) an interview I did during the conference where I and a few others on my team answered questions about our experiences. [Here's](https://www.youtube.com/watch?v=6dTAPgW94g8) another with the TJ Partnership Fund, and [here's](https://tjhsst.fcps.edu/features/launch-tjreverb-culmination-seven-year-project-tj-space) a feature we got from the school after launching.
+[Here's](https://m.youtube.com/watch?v=MCqxMAmE64E&feature=youtu.be) an interview I did during the conference where I and a few others on my team answered questions about our experiences. [Here's](https://www.youtube.com/watch?v=6dTAPgW94g8) another with the TJ Partnership Fund, and [here's](https://tjhsst.fcps.edu/features/launch-tjreverb-culmination-seven-year-project-tj-space) a feature we got from the school after launching. Also, [NASA did a feature](https://www.nasa.gov/feature/nasa-announces-cubesat-launch-initiative-opportunity-0) of the CSLI grant, and one of our photos ended up on the front page. Never before have I regretted being out of frame this much...
 
 #### Launch
 
