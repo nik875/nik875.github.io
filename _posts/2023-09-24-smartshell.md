@@ -4,7 +4,18 @@ title: ChatGPT-integrated Smartshell
 date: 2023-09-24 21:28
 ---
 
-I recently started playing with the idea of a "smart" command-line shell integrated with ChatGPT and implemented in Python. The code for my rudimentary implementation is freely available [here](https://github.com/nik875/smartshell), and should be simple enough to install and run on a Linux system.
+I recently started playing with the idea of a "smart" command-line shell integrated with ChatGPT and implemented in Python. The code for my rudimentary implementation is freely available [here](https://github.com/nik875/intellishell), and should be simple enough to install and run on a Linux system.
+
+**IntelliShell Update 10/9/2023:**
+
+I've changed a lot of things about the smartshell from the original article. It now operates as an oh-my-zsh plugin instead of a standalone Python program. I gave it a proper name: IntelliShell. And I created a proper frontend-backend system with a web server to allow anyone to use it with minimal setup. From interviews I've done with potential users, I decided to target it towards academic researchers transitioning to the computational sciences.
+
+If you want to set this up and try it out yourself, contact me for an API key. I'd be happy to guide you through the installation and offer support, too. I'm still trying to evaluate the commercial viability of this system, so consider it a pro bono service for now.
+
+![](/assets/2023-10-09-smartshell-assets/intellishell-demo.png){:class="img-responsive"}
+*Visual demo of IntelliShell's current capabilities.*
+
+---
 
 ### The Problems I'm Trying to Solve
 
