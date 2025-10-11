@@ -99,4 +99,4 @@ But perhaps it's still useful to understand why we're in our current position wi
 
 What this thought experiment does do is point us in the right direction. If we're going to solve our debt problem, we need to figure out how to reframe the PD that our politicians are locked in. I will leave it to someone with actual qualifications to figure out a less invasive way to achieve that.
 
-Personally? I'm an optimist to a fault, and despite all the evidence I've laid out pointing to the fact that this problem won't be solved until it's too late, I still believe that somebody somewhere will do something about it. Just... maybe after this current wave of ~reality television~ politics.
+Personally? I'm an optimist to a fault, and despite all the evidence I've laid out pointing to the fact that this problem won't be solved until it's too late, I still believe that somebody somewhere will do something about it. Just... maybe after this current wave of ~~reality television~~ politics.
