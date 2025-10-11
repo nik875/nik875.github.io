@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Opinion — Can Less Democracy Save Democracy?
-date: 2023-09-24 21:28
+date: 2025-08-15 21:28
 ---
 
 Yep, I've finally lost it and decided to dip my toe into the radioactive cesspool of American politics. This is a terrible idea. Let's do it.
