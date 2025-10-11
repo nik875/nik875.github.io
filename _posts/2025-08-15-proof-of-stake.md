@@ -6,13 +6,13 @@ date: 2025-08-15 21:28
 
 Yep, I've finally lost it and decided to dip my toe into the radioactive cesspool of American politics. This is a terrible idea. Let's do it.
 
-In recent years, there's been a lot of... Talk™ of threats to American democracy (not even going to *try* citing a source on that...). Most of the arguments made on this subject are highly partisan, but let's step away for a moment from the day-to-day electoral humdrum of culture war mudslinging, AI-enabled hatred, and political violence. Is there a signal underneath all this noise? Is our democratic process really under threat?
+In recent years, there's been a lot of... **Talk™** of threats to American democracy (not even going to *try* citing a source on that...). Most of the arguments made on this subject are highly partisan, but let's step away for a moment from the day-to-day electoral humdrum of culture war mudslinging, AI-enabled hatred, and political violence. Is there a signal underneath all this noise? Is our democratic process really under threat?
 
 I believe there is at least one existential risk to the great American project which hasn't received enough (serious) attention from either party: the Prisoner's Dilemma of the national debt.
 
 ### What is the Prisoner's Dilemma?
 
-For those needing a refresher, the Prisoner's Dilemma (PD) is a fundamental thought experiment in game theory imagining two suspects of a crime being interrogated independently by the police. The police have only enough evidence to convict both suspects of minor drug offenses, and are thus seeking out a confession to burglary. The interrogators employ a tried-and-true tactic: offer each suspect the chance to confess with the promise that they will go home scot-free if they turn on their partner, condemning them to the maximum sentence. If both confess, they will receive some leniency from the judge, but the collective outcome will certainly be worse than if they had kept their mouths shut.
+For those needing a refresher, the Prisoner's Dilemma (PD) is a fundamental thought experiment in game theory imagining two suspects of a crime being interrogated independently by the police. The police have only enough evidence to convict both suspects of minor drug offenses, and are thus seeking out a confession to burglary. The interrogators employ a tried-and-true tactic: offer each suspect the chance to confess with the promise that they will go home scot-free if they turn on their partner, condemning them instead to the maximum sentence. If both confess, they will receive some leniency from the judge, but the collective outcome will certainly be worse than if they had kept their mouths shut.
 
 The scenario can be modeled like so:
 
@@ -69,9 +69,9 @@ In short, we may be able to break the PD gridlock by adding a third player: the 
 
 The bond market already provides an implicit check on partisan spending by being able to define the interest rate at which the risk of a default is considered worth it. Rising bond interest rates during Trump's Liberation Day tariffs is widely considered to be a reason why that policy was ultimately walked back to a less damaging version. Trump and Capitol Hill were forced to pay attention, as raising the borrowing costs could have exploded the cost of their upcoming spending package, the Big Beautiful Bill.
 
-But I worry that even this check will ultimately fail for the same reason that Clinton attempting to balance the budget backfired. Making borrowing costs higher reduces the *cardinal* payoff of extreme partisan deficits, but the core PD logic still applies: if the maximum debt level tolerable by investors is ultimately going to be hit anyway, isn't it better for more of that spending to go to LODE's priorities instead of LDEWSIP's? The ordinal utility socres are still the same, and the game still reduces to a PD. Trump walking back Liberation Day because of the bond market getting "yippy" may have been a second Bill Clinton moment, and a future Democratic administration may completely ignore that signal and push further towards the Nash equilibrium.
+But I worry that even this check will ultimately fail for the same reason that Clinton attempting to balance the budget backfired. Making borrowing costs higher reduces the *cardinal* payoff of extreme partisan deficits, but the core PD logic still applies: if the maximum debt level tolerable by investors is ultimately going to be hit anyway, isn't it better for more of that spending to go to LODE's priorities instead of LDEWPSIP's? The ordinal utility socres are still the same, and the game still reduces to a PD. Trump walking back Liberation Day because of the bond market getting "yippy" may have been a second Bill Clinton moment, and a future Democratic administration may completely ignore that signal and push further towards the Nash equilibrium.
 
-This is the motivation for my proposal: giving bondholders real power over the political process in a new Bondholder's House. This is inspired directly by Proof-of-Stake block validation and governance measures on blockchains, specifically the Ethereum cryptocurrency. The logic is that individuals holding the greatest number of coins have the most "stake" in the integrity and success of that coin, and thus are incentivized to act honestly in block validation decisions to protect their investment.
+This is the motivation for my proposal: giving bondholders real power over the political process in a new Bondholder's House. This is inspired directly by Proof-of-Stake block validation and governance systems on blockchains, specifically the Ethereum cryptocurrency. The logic is that individuals holding the greatest number of coins have the most "stake" in the integrity and success of that currency, and thus are incentivized to act honestly in block validation decisions to protect their investment.
 
 I would recommend reading the full paper for a detailed explanation of how this could work, but the basic idea is that if bondholders had some limited ability to veto budget proposals that negatively impacted their investment, we might yet be able to avoid a debt crisis. Taking away power from democratically elected leaders and placing it in the hands of self-interested, profit-motivated individuals may be exactly what we need to escape the PD we're currently locked in.
 
@@ -82,14 +82,14 @@ To demonstrate, we can change our PD model to include the party currently in pow
 | **Party Passes Balanced Budget**   | Party: 2, Bondholders: 2             | Party: 1, Bondholders: 1         |
 | **Party Runs Deficit Budget**      | Party: 3, Bondholders: 1             | Party: 1, Bondholders: 2         |
 
-With this modification, running an extreme deficit is no longer a strictly superior strategy to passing a balanced budget. In fact, because the Bondholder's House makes its decision with full information of what decision the party in power has made (the game is sequential rather than simultaneous like the original PD), the party can expect the bondholders to act with strict economic rationality: approving the budget if it's balanced, and vetoing it if it's fiscally irresponsible. We can thus simplify the game by removing the Bondholder entirely (because their behavior is known without ambiguity):
+With this modification, running an extreme deficit is no longer a strictly superior strategy to passing a balanced budget. In fact, because the Bondholder's House makes its decision with full information of what decision the party in power has made (the game is sequential rather than simultaneous like the original PD), the party can expect the bondholders to act with economic rationality: approving the budget if it's balanced, and vetoing it if it's fiscally irresponsible. We can thus simplify the game by removing the Bondholder entirely (because their behavior is known without ambiguity):
 
 | Party Decision         | Expected Party Payoff |
 |-------------------------|----------------------|
 | Pass Balanced Budget    | 2                    |
 | Run Deficit Budget      | 1                    |
 
-And now we have successfully reframed the PD as an agreement game, where it's mutually beneficial for the party in power to spend responsibly, and for the bondholders to respect the democratic process and approve that spending (this last part is a bit more complicated and elaborated on in the paper).
+And now we have successfully reframed the PD as an agreement game, where it's mutually beneficial for the party in power to spend responsibly, and for the bondholders to respect the democratic process and approve that spending (similar to how the House of Lords in the UK restrains itself to protect its legitimacy unless absolutely necessary; if it overstepped, the people would demand to be rid of it).
 
 ### Is this ever going to happen?
 
