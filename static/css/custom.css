@@ -30,7 +30,7 @@
 
 /* Modal styling */
 .modal {
-    display: none;
+    display: none !important;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -38,6 +38,12 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
     animation: fadeIn 0.3s ease;
 }
 
@@ -48,7 +54,6 @@
 
 .modal-content {
     background-color: var(--entry);
-    margin: 15% auto;
     padding: 20px;
     border: 1px solid var(--border);
     border-radius: 8px;

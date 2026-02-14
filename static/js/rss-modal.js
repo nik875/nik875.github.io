@@ -27,21 +27,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('rss-modal');
     const closeBtn = document.querySelector('.modal-close');
 
-    if (btn) {
-        btn.onclick = function() {
-            modal.style.display = 'block';
-        }
-    }
+    if (btn && modal) {
+        // Open modal on button click
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.classList.add('show');
+        });
 
-    if (closeBtn) {
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
+        // Close modal on close button click
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.remove('show');
+            });
         }
-    }
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+        // Close modal when clicking outside the content
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.classList.contains('show')) {
+                modal.classList.remove('show');
+            }
+        });
     }
 });
