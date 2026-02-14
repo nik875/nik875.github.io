@@ -1,3 +1,9 @@
+# Hugo
+/public
+/resources
+hugo_stats.json
+
+# Legacy Jekyll (no longer needed)
 _site
 .sass-cache
 .jekyll-cache
