@@ -1,8 +1,9 @@
 ---
-title: "Opinion — Will We Ever Illuminate the Black Box?"
-date: 2022-11-17T12:41:00-05:00
+title: "Will We Ever Illuminate the Black Box?"
+date: 2026-02-13T12:41:00-05:00
 tags: ["essay"]
 draft: false
+featured: true
 ---
 
 I recently read through [The Bitter Lesson](https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf), an essay by Richard Sutton, widely considered to be the "father" of reinforcement learning, about why the incorporation of human knowledge into AI has been unhelpful or possibly even detrimental to its long-term development. A bitter lesson indeed—nobody wants to believe themselves obsolete, least of all the very people working to bring about Artificial Superintelligence (ASI). I certainly didn't want to accept it when I first read Sutton's essay, but the more I looked back over my past experiences with machine learning, the more I realized he might have a point.

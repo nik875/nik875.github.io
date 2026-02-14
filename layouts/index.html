@@ -1,5 +1,605 @@
 {{ define "main" }}
-<div>
-    {{ .Content }}
+<style>
+  .hero {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 1.5rem 0;
+    display: block;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  .hero .tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+    margin: 0 0 3rem 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .hero .tagline {
+      color: #999;
+    }
+  }
+  .section-divider {
+    border-top: 1px solid #ddd;
+    margin: 3rem 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .section-divider {
+      border-top-color: #444;
+    }
+  }
+  .section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 2rem 0 2.5rem;
+  }
+  .featured-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  @media (max-width: 900px) {
+    .featured-posts {
+      grid-template-columns: 1fr;
+    }
+  }
+  .featured-overlay {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    min-height: 120px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .featured-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .featured-post.highlighted {
+    border-color: #0066cc;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-post.highlighted {
+      box-shadow: 0 2px 8px rgba(102, 179, 255, 0.1);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-overlay {
+      background: rgba(20, 20, 20, 0.95);
+      border-color: #444;
+    }
+  }
+  .featured-overlay-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #333;
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-overlay-content {
+      color: #ddd;
+    }
+  }
+  .featured-post {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-post {
+      border-color: #444;
+    }
+  }
+  .featured-post:hover {
+    border-color: #0066cc;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-post:hover {
+      box-shadow: 0 2px 8px rgba(102, 179, 255, 0.1);
+    }
+  }
+  .featured-post:visited {
+    color: inherit;
+  }
+  .featured-post h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .featured-post .meta {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-post .meta {
+      color: #aaa;
+    }
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    background-color: #e8e8e8;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    text-transform: capitalize;
+  }
+  @media (prefers-color-scheme: dark) {
+    .tag {
+      background-color: #333;
+      color: #ccc;
+    }
+  }
+  .latest-posts {
+    list-style: none;
+    margin-bottom: 3rem;
+  }
+  .latest-posts li {
+    margin: 2rem 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .latest-posts li {
+      border-bottom-color: #333;
+    }
+  }
+  .latest-posts li:last-child {
+    border-bottom: none;
+  }
+  .latest-posts a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .latest-posts a:hover {
+    text-decoration: underline;
+  }
+  .latest-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .latest-meta {
+      color: #aaa;
+    }
+  }
+  .latest-posts .description {
+    font-style: italic;
+    color: #666;
+    margin: 0.5rem 0 0;
+  }
+  .latest-posts .description a {
+    color: #0066cc;
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  @media (prefers-color-scheme: dark) {
+    .latest-posts .description {
+      color: #999;
+    }
+    .latest-posts .description a {
+      color: #66b3ff;
+    }
+  }
+  .rss-cta {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: #f8f8f8;
+    border-radius: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-cta {
+      background: #2a2a2a;
+    }
+  }
+  .rss-cta h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .rss-cta p {
+    color: #666;
+    margin: 0 0 1.5rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-cta p {
+      color: #aaa;
+    }
+  }
+  .rss-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-button {
+      background: #555;
+    }
+  }
+  .rss-button:hover,
+  .rss-button:visited {
+    color: white;
+  }
+  .rss-button:hover {
+    opacity: 0.9;
+  }
+  .rss-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .rss-modal.active {
+    display: flex;
+  }
+  .rss-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .rss-modal-content {
+    position: relative;
+    z-index: 1001;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-modal-content {
+      background: #1a1a1a;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .rss-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  .rss-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 600px) {
+    .rss-options {
+      grid-template-columns: 1fr;
+    }
+  }
+  .rss-option-card {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+  .rss-option-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .rss-option-content {
+    padding: 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-option-content {
+      border-color: #444;
+    }
+  }
+  .rss-option-card input[type="radio"]:checked + .rss-option-content {
+    border-color: #0066cc;
+    background-color: #e6f0ff;
+    color: #0066cc;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-option-card input[type="radio"]:checked + .rss-option-content {
+      background-color: #1a2a4a;
+      color: #66b3ff;
+    }
+  }
+  .rss-option-card:hover .rss-option-content {
+    border-color: #0066cc;
+  }
+  .rss-url-section {
+    margin-bottom: 1.5rem;
+  }
+  .rss-instructions {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-instructions {
+      color: #aaa;
+    }
+  }
+  .rss-url-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .rss-url-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-url-input {
+      background: #2a2a2a;
+      color: #eee;
+      border-color: #444;
+    }
+  }
+  .copy-button {
+    padding: 0.75rem 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .copy-button {
+      background: #555;
+    }
+  }
+  .copy-button:hover {
+    opacity: 0.9;
+  }
+  .copy-button.copied {
+    background: #0a7a0a;
+  }
+  .rss-modal-close {
+    width: 100%;
+    padding: 0.75rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-modal-close {
+      background: #2a2a2a;
+      border-color: #444;
+      color: #eee;
+    }
+  }
+  .rss-modal-close:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<div class="hero">
+  <img src="/assets/crosscurrents_title.png" alt="Crosscurrents">
+  <p class="tagline">On Systems, Incentives, and Machine Intelligence</p>
 </div>
+
+<div class="section-divider"></div>
+
+<h2 class="section-title">My Best Work</h2>
+
+<div class="featured-posts">
+  {{ range (where (where .Site.RegularPages "Section" "posts") "Params.featured" true) | first 3 }}
+  <a href="{{ .RelPermalink }}" class="featured-post" data-description="{{ .Summary }}" data-url="{{ .RelPermalink }}">
+    <h3>{{ .Title }}</h3>
+    <div class="meta">{{ .Date.Format "January 2, 2006" }}</div>
+    {{ if .Params.tags }}
+    <div class="tags">
+      {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </a>
+  {{ end }}
+  <a href="#" class="featured-overlay" data-url="#">
+    <div class="featured-overlay-content"></div>
+  </a>
+</div>
+
+<script>
+  let currentCard = null;
+
+  function updateOverlay(card) {
+    const overlay = card.parentElement.querySelector('.featured-overlay');
+    const content = overlay.querySelector('.featured-overlay-content');
+    content.textContent = card.dataset.description;
+    overlay.href = card.dataset.url;
+    overlay.classList.add('active');
+
+    // Update highlighted card styling
+    document.querySelectorAll('.featured-post').forEach(c => {
+      c.classList.remove('highlighted');
+    });
+    card.classList.add('highlighted');
+
+    currentCard = card;
+  }
+
+  // Initialize with first card highlighted
+  const firstCard = document.querySelector('.featured-post');
+  if (firstCard) {
+    updateOverlay(firstCard);
+  }
+
+  document.querySelectorAll('.featured-post').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      updateOverlay(card);
+    });
+  });
+
+  // Keep overlay visible even after mouse leaves, but allow highlighting different cards
+  document.querySelector('.featured-posts').addEventListener('mouseleave', () => {
+    // Overlay stays visible with current card
+  });
+</script>
+
+<div class="section-divider"></div>
+
+<h2 class="section-title">Latest</h2>
+
+<ul class="latest-posts">
+  {{ range (where (where .Site.RegularPages "Section" "posts") "Params.featured" "!=" true) | first 3 }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="latest-meta">{{ .Date.Format "January 2, 2006" }}</div>
+    <div class="description">{{ .Summary }}</div>
+    {{ if .Params.tags }}
+    <div class="tags">
+      {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>
+
+<div class="section-divider"></div>
+
+<div class="rss-cta">
+  <h2>Subscribe to Crosscurrents</h2>
+  <p>Get notified when new posts are published</p>
+  <button class="rss-button" id="rss-button">Subscribe via RSS</button>
+</div>
+
+<div class="rss-modal" id="rss-modal">
+  <div class="rss-modal-content">
+    <h2>What would you like to see?</h2>
+
+    <div class="rss-options">
+      <label class="rss-option-card">
+        <input type="radio" name="rss-filter" value="everything" checked>
+        <div class="rss-option-content">Everything</div>
+      </label>
+      <label class="rss-option-card">
+        <input type="radio" name="rss-filter" value="essays">
+        <div class="rss-option-content">Essays</div>
+      </label>
+      <label class="rss-option-card">
+        <input type="radio" name="rss-filter" value="builds">
+        <div class="rss-option-content">Builds</div>
+      </label>
+    </div>
+
+    <div class="rss-url-section">
+      <p class="rss-instructions">Copy this URL and paste it into any RSS reader (like Feedly, Inoreader, or Apple News):</p>
+      <div class="rss-url-container">
+        <input type="text" id="rss-url" class="rss-url-input" readonly>
+        <button class="copy-button" id="copy-button">Copy</button>
+      </div>
+    </div>
+
+    <button class="rss-modal-close" id="rss-modal-close">Close</button>
+  </div>
+  <div class="rss-modal-backdrop" id="rss-modal-backdrop"></div>
+</div>
+
+<script>
+  // RSS Modal functionality
+  const rssButton = document.getElementById('rss-button');
+  const rssModal = document.getElementById('rss-modal');
+  const rssModalBackdrop = document.getElementById('rss-modal-backdrop');
+  const rssModalClose = document.getElementById('rss-modal-close');
+  const rssUrlInput = document.getElementById('rss-url');
+  const copyButton = document.getElementById('copy-button');
+  const rssFilters = document.querySelectorAll('input[name="rss-filter"]');
+
+  const feedUrls = {
+    everything: 'https://crosscurrents.ink/index.xml',
+    essays: 'https://crosscurrents.ink/tags/essay/index.xml',
+    builds: 'https://crosscurrents.ink/tags/build/index.xml'
+  };
+
+  function updateFeedUrl() {
+    const selectedFilter = document.querySelector('input[name="rss-filter"]:checked').value;
+    rssUrlInput.value = feedUrls[selectedFilter];
+  }
+
+  function openModal() {
+    rssModal.classList.add('active');
+    updateFeedUrl();
+  }
+
+  function closeModal() {
+    rssModal.classList.remove('active');
+  }
+
+  function copyToClipboard() {
+    rssUrlInput.select();
+    document.execCommand('copy');
+    copyButton.textContent = 'Copied!';
+    copyButton.classList.add('copied');
+    setTimeout(() => {
+      copyButton.textContent = 'Copy';
+      copyButton.classList.remove('copied');
+    }, 2000);
+  }
+
+  rssButton.addEventListener('click', openModal);
+  rssModalClose.addEventListener('click', closeModal);
+  rssModalBackdrop.addEventListener('click', closeModal);
+  copyButton.addEventListener('click', copyToClipboard);
+
+  rssFilters.forEach(filter => {
+    filter.addEventListener('change', updateFeedUrl);
+  });
+</script>
 {{ end }}

@@ -1,8 +1,9 @@
 ---
-title: "Opinion — Bots will Win the Detection War"
+title: "Bots will Win the Detection War"
 date: 2022-11-17T12:41:00-05:00
 tags: ["essay", "build"]
 draft: false
+featured: true
 ---
 
 For nearly the internet's entire history, websites have been at war with automated requests (known as "bot" requests) that attempt to exploit their services. The war has resulted in an arms race of websites trying to develop increasingly effective Turing tests and bots getting increasingly effective at defeating them. From the very first instance of distorted characters being used on AltaVista's search engine to confound optical character recognition systems and protect the service from bots, to the original CAPTCHA (which stands for Completely Automated Turing test to tell Computers and Humans Apart)'s distorted text with added markings, to today's Google reCAPTCHA V3, bot detection technology has advanced and been defeated by competing advances in bot technology.

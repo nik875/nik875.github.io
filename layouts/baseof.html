@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital@0;1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; background: #fff; }
+        body { font-family: "Source Serif 4", serif; line-height: 1.6; color: #333; background: #fff; }
         @media (prefers-color-scheme: dark) { body { color: #eee; background: #1a1a1a; } }
-        header, footer { border-bottom: 1px solid #ddd; padding: 2rem 0; margin: 2rem 0; }
-        @media (prefers-color-scheme: dark) { header, footer { border-bottom-color: #444; } }
+        header { border-bottom: 1px solid #ddd; padding: 1rem 0; margin: 0; }
+        @media (prefers-color-scheme: dark) { header { border-bottom-color: #444; } }
+        .header-content { max-width: 800px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; }
+        .header-logo { max-width: 200px; height: auto; flex: 1; text-align: center; }
+        .header-name { flex: 1; }
+        .header-nav { flex: 1; text-align: right; }
+        footer { border-top: 1px solid #ddd; padding: 2rem 0; margin: 2rem 0; }
+        @media (prefers-color-scheme: dark) { footer { border-top-color: #444; } }
         main { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
-        header, footer { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        footer { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
         h1, h2, h3, h4, h5, h6 { margin: 1.5rem 0 0.5rem; }
         p { margin: 1rem 0; }
         a { color: #0066cc; }
@@ -31,23 +38,33 @@
         .meta { color: #666; font-size: 0.9rem; }
         @media (prefers-color-scheme: dark) { .meta { color: #aaa; } }
         .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
-        .tag { background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 3px; text-decoration: none; font-size: 0.9rem; }
+        .tag { background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 3px; text-decoration: none; font-size: 0.9rem; text-transform: capitalize; }
         @media (prefers-color-scheme: dark) { .tag { background: #333; } }
-        nav { display: flex; gap: 1.5rem; margin: 1rem 0; }
+        nav { display: flex; gap: 1.5rem; margin: 0; margin-left: auto; }
         nav a { text-decoration: none; }
         nav a:hover { text-decoration: underline; }
+        table { border-collapse: collapse; margin: 1rem 0; width: 100%; overflow-x: auto; display: block; }
+        th, td { border: 1px solid #ddd; padding: 0.75rem; text-align: left; }
+        @media (prefers-color-scheme: dark) { th, td { border-color: #444; } }
+        th { background: #f8f8f8; font-weight: 600; }
+        @media (prefers-color-scheme: dark) { th { background: #2a2a2a; } }
+        tr:nth-child(even) { background: #f8f8f8; }
+        @media (prefers-color-scheme: dark) { tr:nth-child(even) { background: #222; } }
     </style>
 </head>
 <body>
     <header>
-        <h1><a href="/" style="text-decoration: none; color: inherit;">{{ .Site.Title }}</a></h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/posts/">Posts</a>
-            <a href="/tags/essay/">Essays</a>
-            <a href="/tags/build/">Builds</a>
-            <a href="/files/Resume.pdf">Resume</a>
-        </nav>
+        <div class="header-content">
+            <div class="header-name">
+                <a href="/" style="text-decoration: none; color: inherit; font-size: 1.5rem;">Crosscurrents</a>
+            </div>
+            <div class="header-logo"></div>
+            <nav class="header-nav">
+                <a href="/tags/essay/">Essays</a>
+                <a href="/tags/build/">Builds</a>
+                <a href="/about/">About</a>
+            </nav>
+        </div>
     </header>
     <main>
         {{ block "main" . }}{{ end }}

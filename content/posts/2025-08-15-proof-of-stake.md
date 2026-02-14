@@ -1,8 +1,9 @@
 ---
-title: "Opinion — Can Less Democracy Save Democracy?"
+title: "Can Less Democracy Save Democracy?"
 date: 2025-08-15T21:28:00-05:00
 tags: ["essay"]
 draft: false
+featured: true
 ---
 
 Yep, I've finally lost it and decided to dip my toe into the radioactive cesspool of American politics. This is a terrible idea. Let's do it.
