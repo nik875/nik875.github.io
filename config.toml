@@ -1,6 +1,5 @@
 baseURL = "https://nik875.github.io/"
 title = "Nikhil Kalidasu"
-theme = "PaperMod"
 languageCode = "en-us"
 
 # Suppress harmless warnings for embedded HTML in markdown
@@ -14,40 +13,12 @@ posts = "/:year/:month/:day/:slug/"
 [taxonomies]
 tag = "tags"
 
-[params]
-defaultTheme = "dark"
-author = "Nikhil Kalidasu"
-description = "My personal website, where you can see my resumé and some of the projects I've worked on in the past."
-comments = true
-ShowReadingTime = true
-
-[params.assets]
-[[params.assets.css]]
-src = "css/custom.css"
-
-[[params.assets.js]]
-src = "js/rss-modal.js"
-
+# RSS feeds
 [outputs]
 home = ["HTML", "RSS"]
 taxonomy = ["HTML", "RSS"]
 
-[[menu.main]]
-name = "Posts"
-url = "/posts/"
-weight = 10
-
-[[menu.main]]
-name = "Essays"
-url = "/tags/essay/"
-weight = 20
-
-[[menu.main]]
-name = "Builds"
-url = "/tags/build/"
-weight = 30
-
-[[menu.main]]
-name = "Resume"
-url = "/files/Resume.pdf"
-weight = 40
+# Site metadata
+[params]
+author = "Nikhil Kalidasu"
+description = "My personal website"
