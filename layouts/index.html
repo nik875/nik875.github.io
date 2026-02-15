@@ -156,7 +156,7 @@
     font-style: italic;
     color: #666;
     margin: 0.5rem 0 0;
-    display: none !important;
+    display: none;
   }
   @media (prefers-color-scheme: dark) {
     .featured-post .description {
@@ -178,7 +178,7 @@
       font-size: 1.3rem;
     }
     .featured-post .description {
-      display: block !important;
+      display: block;
     }
   }
   @media (prefers-color-scheme: dark) and (max-width: 768px) {
@@ -534,7 +534,7 @@
   <a href="{{ .RelPermalink }}" class="featured-post" data-description="{{ with .Description }}{{ . }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 }}{{ end }}" data-url="{{ .RelPermalink }}">
     <h3>{{ .Title }}</h3>
     <div class="meta">{{ .Date.Format "January 2, 2006" }}</div>
-    <div class="description">{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}</div>
+    <div class="description">{{ with .Description }}{{ . | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}</div>
     {{ if .Params.tags }}
     <div class="tags">
       {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
