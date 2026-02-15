@@ -13,7 +13,8 @@
         @media (prefers-color-scheme: dark) { header { border-bottom-color: #444; } }
         .header-content { max-width: 800px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; flex-wrap: wrap; }
         .header-logo { max-width: 200px; height: auto; flex: 1; text-align: center; }
-        .header-name { flex: 1; }
+        .header-name { flex: 1; display: none; }
+        .header-name.show { display: block; }
         .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0; margin-left: auto; }
         .menu-toggle span { display: block; width: 25px; height: 3px; background: #333; margin: 5px 0; border-radius: 2px; transition: 0.3s; }
         @media (prefers-color-scheme: dark) { .menu-toggle span { background: #eee; } }
@@ -56,6 +57,8 @@
         nav a { text-decoration: none; color: inherit; }
         nav a:visited { color: inherit; }
         nav a:hover { text-decoration: underline; }
+        .is-home nav { margin-left: 0; margin: 0 auto; justify-content: center; }
+        .is-home .header-content { justify-content: center; }
         blockquote { border-left: 4px solid #ccc; padding-left: 1rem; margin: 1rem 0; color: #555; font-style: italic; }
         @media (prefers-color-scheme: dark) { blockquote { border-left-color: #555; color: #bbb; } }
         table { border-collapse: collapse; margin: 1rem 0; width: 100%; overflow-x: auto; display: block; }
@@ -77,10 +80,10 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
-    <header>
+    <header{{ if .IsHome }} class="is-home"{{ end }}>
         <div class="header-content">
-            <div class="header-name">
-                <a href="/" style="text-decoration: none; color: inherit; font-size: 1.5rem;">CrossCurrents</a>
+            <div class="header-name{{ if not .IsHome }} show{{ end }}">
+                <a href="/" style="text-decoration: none; color: inherit;">CrossCurrents</a>
             </div>
             <div class="header-logo"></div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
