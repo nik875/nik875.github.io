@@ -15,7 +15,7 @@ The name "Space Program" is actually something I created towards the end of my s
 
 REVERB had been started in 2016, long before my time at TJ, with the original mission of testing the [Iridium satellite communications system](https://www.iridium.com/) from Low-Earth Orbit (LEO). I first heard of the project in my 7th grade, right as I was considering future applications to [TJHSST](https://tjhsst.fcps.edu/), a local magnet school. I remember that looking at their [website](https://activities.tjhsst.edu/cubesat/), I was completely transfixed by the potential to work on a real satellite that would actually be launched to space as early as high school. I mean, who wouldn't be, right? It's a **REAL** satellite! Going to **REAL** space!
 
-![](/assets/tjsp-assets/2022-07-23-20-00-11-image.png){:class="img-responsive"}
+![](/assets/tjsp-assets/2022-07-23-20-00-11-image.png)
 *Screenshot of the old website's landing screen, the source of my desire to join the team.*
 
 In the hopes of one day joining this team and working on REVERB, I submitted an application to TJHSST in 8th grade and was graciously accepted. At the very first opportunity in my freshman year of high school, I submitted another application for the team, and was again graciously accepted. Thus began four years of work on one of the most unique and unforgettable projects I've ever undertaken.
@@ -54,10 +54,10 @@ By February of 2022, we had a fully-written flight software and a verified-worki
 
 Final satellite assembly began in April 2022 and ran into early May. Past generations of students had given us CAD for the whole satellite and had machined out some custom components necessary for our design. However, these were created on a low-quality machine and proved to be unfit for a satellite. We had to re-mill all components on TJ's in-house milling machines. Once our hardware was all ready, we followed instructions prepared by past CAD teams to assemble the satellite. During this time, I was finally able to take something of a back seat and let the most qualified of us handle assembly; our progress up to now was enough to convince even our most firm deniers that REVERB was going to launch, and our team worked with a spark of passion and inspiration.
 
-![](/assets/tjsp-assets/2022-07-23-21-45-33-image.png){:class="img-responsive"}
+![](/assets/tjsp-assets/2022-07-23-21-45-33-image.png)
 *Laser engraving on REVERB's bottom plate, resting on partially-completed satellite.*
 
-![](/assets/tjsp-assets/2022-07-23-21-42-30-image.png){:class="img-responsive"}
+![](/assets/tjsp-assets/2022-07-23-21-42-30-image.png)
 *Completed satellite, resting on a 3D-printed holder.*
 
 ### Post-Assembly
@@ -68,17 +68,17 @@ After REVERB was assembled, launch was almost guaranteed. However, there were st
 
 In late May, we visited the US Naval Academy in order to conduct a vibration test and verify that our satellite could survive the ride to the ISS on SpaceX's Falcon 9. REVERB passed, and after the documents were submitted to Nanoracks (our launch provider), was cleared for integration and launch. While there, we also got to watch the Blue Angels perform a flyover for some honorable guests.
 
-![](/assets/tjsp-assets/2022-07-23-21-55-21-image.png){:class="img-responsive"}
+![](/assets/tjsp-assets/2022-07-23-21-55-21-image.png)
 *REVERB strapped in for its vibration test.*
 
-![](/assets/tjsp-assets/2022-07-23-21-56-16-image.png){:class="img-responsive"}
+![](/assets/tjsp-assets/2022-07-23-21-56-16-image.png)
 *Blue Angels flyover at the US Naval Academy.*
 
 #### Integration at Nanoracks
 
 In mid-July, some of our younger members flew to Houston, Texas, to integrate REVERB into its launch vehicle. This was a major step towards launch, representing the point where the satellite was finally "out of our hands." I consider this to be the true "completion date" for REVERB.
 
-![](/assets/tjsp-assets/2022-07-23-22-01-08-image.png){:class="img-responsive"}
+![](/assets/tjsp-assets/2022-07-23-22-01-08-image.png)
 *REVERB at Nanoracks' integration facility*
 
 #### Publications

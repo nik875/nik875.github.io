@@ -13,7 +13,7 @@ I've changed a lot of things about the smartshell from the original article. It 
 
 If you want to set this up and try it out yourself, contact me for an API key. I'd be happy to guide you through the installation and offer support, too. I'm still trying to evaluate the commercial viability of this system, so consider it a pro bono service for now.
 
-![](/assets/2023-10-09-smartshell-assets/intellishell-demo.png){:class="img-responsive"}
+![](/assets/2023-10-09-smartshell-assets/intellishell-demo.png)
 *Visual demo of IntelliShell's current capabilities.*
 
 ---

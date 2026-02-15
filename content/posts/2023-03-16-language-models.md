@@ -37,7 +37,7 @@ A: Happy, bright, exciting<|endoftext|>
 
 Songs were split up into excerpts such that each data point was exactly 128 tokens in length (it was surprisingly difficult and slow to predict how many tokens the question and answer portions would be encoded as by SentencePiece). This was far less than distilgpt2's actual limit, but it was the limit of what would train within a reasonable time on my laptop. The model was fine-tuned in an autoregressive fashion, learning to predict the $n + 1$ token given the past $n$ tokens. Fine-tuning took around 18 hours for 15 epochs before the loss stabilized.
 
-![](/assets/2023-03-16-language-models-assets/loss.png){:class="img-responsive"}
+![](/assets/2023-03-16-language-models-assets/loss.png)
 *Model loss over 15 training epochs.*
 
 ### Performance Evaluation
@@ -93,16 +93,16 @@ What's most interesting (and concerning), in my opinion, is that I was able to d
 
 It would not have been much of a challenge for me to fine-tune distilgpt2 to, say, generate misinformation or hate speech based on prompts. It would've been pretty much the exact same training pipeline, but with different data and a different evaluation method. In fact, fine-tuning may not even be completely necessary. GPT-Neo, an older language model with 1.3 billion parameters, was right at the limit of what I could use for inferencing on my laptop. With the right prompts, even the vanilla model was able to produce the following generations:
 
-![](/assets/2023-03-16-language-models-assets/racism.png){:class="img-responsive"}
+![](/assets/2023-03-16-language-models-assets/racism.png)
 *Clearly it's racist...*
 
-![](/assets/2023-03-16-language-models-assets/sexism.png){:class="img-responsive"}
+![](/assets/2023-03-16-language-models-assets/sexism.png)
 *And sexist...*
 
-![](/assets/2023-03-16-language-models-assets/donald_trump.png){:class="img-responsive"}
+![](/assets/2023-03-16-language-models-assets/donald_trump.png)
 *And capable of impersonating politicians with both those traits...*
 
-![](/assets/2023-03-16-language-models-assets/flat-earth.png){:class="img-responsive"}
+![](/assets/2023-03-16-language-models-assets/flat-earth.png)
 *And capable of generating dangerous misinformation.*
 
 The most powerful open-source language models today already have an order of magnitude more parameters than GPT-Neo. It would be trivial for anyone with enough financial backing to fine-tune something like GPT-NeoX on vaccine misinformation, for example, and connect it to existing social media bots to influence the opinions of American voters. We've known about foreign influences on our elections through bots for a long time, and in the past it was primarily done with human "troll farms" in low-income countries where cheap labor is widely available to generate misinformation. LLMs have the potential to fully automate this process and evade detection far better than the often non-native English speakers who write today's bot posts. If I was able to do this with a laptop, imagine what state-backed malicious actors could do with large amounts of resources at their disposal.

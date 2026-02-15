@@ -12,7 +12,7 @@ In my final year of high school, I had the incredible opportunity to work in TJH
 
 ## Microbial Biofilms and DNA Sequencing
 
-![](/assets/senior-research-assets/memorial-roof.png){:class="img-responsive"}
+![](/assets/senior-research-assets/memorial-roof.png)
 *The roof of the Jefferson Memorial in Washington, DC, where I went to scrape off samples of biofilm from the marble surface.*
 
 At the start of the school year, I worked with two other students on a team to continue an ongoing research project that our school had been involved with: investigating the biofilms growing on stone surfaces at Arlington National Cemetery and the Jefferson Memorial. Students had been visiting these monuments for years and collecting samples of an ugly green film for DNA sequencing and analysis back at our lab, in the hopes of providing the National Park Service with useful information about what bacteria were living on the stone, what might've been the source of the green pigmentation, and what potential avenues for treatment might be. In continuing this project after the COVID-19 pandemic, we returned to our sampling sites and collected the next data points in a long-term project.
@@ -29,7 +29,7 @@ In that process, I noticed something missing from many of these conventional tec
 
 So I found it very disappointing that I was unable to find any tools or methods that could effectively represent this fundamental reality of the microbial world. Ion Reporter attempted to classify all bacteria on this continuum into taxonomic boxes, and visualizing those boxes did provide valuable insight into our results, but it relied on a false assumption that bacteria can be classified into a taxonomic system at all. Other methods which looked at the frequencies of independent unique sequences (known as ASVs) only helped to compare different samples, not different sequences as I'd hoped. So I decided to diverge fully from my original project and develop this analysis method myself. My central question was this: Was it possible to convert individual DNA sequences into points in a multidimensional space such that when plotted together, more similar sequences would be closer together and more different sequences would be farther apart? In other words, could sequential DNA base pair data be converted into simple multidimensional points that retained the information of the original data? That second question hints at the approach I would take to solve this problem: machine learning.
 
-![](/assets/senior-research-assets/comparative-model-flowchart.png){:class="img-responsive"}
+![](/assets/senior-research-assets/comparative-model-flowchart.png)
 *A flowchart of my comparative model's training loop.*
 
 Over my final few months of high school, I created a neural network capable of taking a 300-base-pair excerpt of 16S rRNA and converting it into a 2D point that best represented where in space that sequence fell in relation to the other sequences that the model was trained on. The model was trained comparatively: two random sequences were passed through the model and the Euclidean distance between the resultant points was compared to the sequences' true dissimilarity (as computed by pairwise sequence alignment). The model was then trained to make the Euclidean distances match true dissimilarity as closely as possible. Because I was using random pairs of sequences to train my model instead of individual sequences, I had a virtually infinite number of possible pairs and overtraining wasn't a significant issue.
@@ -38,23 +38,23 @@ The model itself was implemented in TensorFlow and took advantage of a rising st
 
 ## The Results
 
-![](/assets/senior-research-assets/silva_domains.png){:class="img-responsive"}
+![](/assets/senior-research-assets/silva_domains.png)
 *Domain-level plot of SILVA.*
 
-![](/assets/senior-research-assets/silva_phylum.png){:class="img-responsive"}
+![](/assets/senior-research-assets/silva_phylum.png)
 *Phylum-level plot.*
 
-![](/assets/senior-research-assets/silva_class.png){:class="img-responsive"}
+![](/assets/senior-research-assets/silva_class.png)
 *Class-level plot.*
 
 These results were incredibly exciting to see after months of failure. The model performed exactly as intended, creating images that effectively represented the SILVA dataset. Clear separation was visible at not only the domain level, but also the phylum and class levels. Unfortunately, things started to break down below that.
 
-![](/assets/senior-research-assets/silva_order.png){:class="img-responsive"}
+![](/assets/senior-research-assets/silva_order.png)
 *Order-level plot.*
 
 This is because two dimensions just doesn't offer the model enough space to effectively represent all the differences it sees. Scaling it up to three produces much better results at these lower taxonomic levels.
 
-![](/assets/senior-research-assets/silva_order_3d){:class="img-responsive"}
+![](/assets/senior-research-assets/silva_order_3d)
 *Order-level plot in 3D.*
 
 If we remove the goal of visualization, it's theoretically possible to continue this process even further, increasing the number of dimensions to create a better representation of the dataset. Doing so opens up potential applications in taxonomic classification, sample-sample comparison, and unsupervised clustering approaches that might suggest alternatives to our current taxonomic system.
@@ -65,12 +65,12 @@ While these plots are certainly very pretty (I really can't overstate how good t
 
 I wouldn't be able to get my hands on the data that the others in my group were collecting until the very end of the year; what I did have was data collected in 2019 from Arlington National Cemetery's amphitheater. The raw output from the Ion Torrent machine was millions of sequences (known as reads) from many samples which came from various regions of the amphitheater and had various surface pigmentation. This output was not quality-checked or trimmed, and there were many duplicates (as can be expected in any sample taken from the environment). The previous group of students had already passed this data through the integrated Ion Reporter analysis software, and this software outputted a list of taxonomically classified unique reads that had been trimmed and quality-checked, along with their respective frequencies in each sample. These results were intended for producing plots showing the proportions of various taxonomic groups in the overall dataset, which can be helpful for determining the composition of a sample. Instead of doing the entire DNA sequence preparation process myself, I elected to piggyback off this output in creating a dataset for my model. I then retrained my model with the new data and attempted to generate similar plots to the plots I created for the SILVA database.
 
-![](/assets/senior-research-assets/anc_phylum.png){:class="img-responsive"}
+![](/assets/senior-research-assets/anc_phylum.png)
 *Arlington National Cemetery's biofilms, colored by bacterial phylum. The data collected only included bacteria.*
 
 The distribution here is clearly different from plots generated from SILVA: not only does the taxonomic classification not line up with the model's interpretation, but several strong clusters appear which seem to have nothing at all to do with taxonomy. The reason for this is unclear until we consider the specific methods used during the sequencing of this data: students added multiple primer sets into the reagent mixture before sequencing, allowing the machine to target multiple parts of the 16S gene with short 300-length reads. The raw output from the Ion Torrent machine contains reads from all these different regions completely unclassified and mixed together. Ion Reporter handles variable region classification along with taxonomic classification and unique read filtering, which turned out to be another unexpected benefit of piggybacking off its output. Interestingly, it only outputs variable region classifications for about half of the unique reads; I had to make a separate small neural network to classify the remaining half using the provided labels as ground truth. Once I'd generated labels for my entire dataset, I was able to color in the plot I already generated by variable region.
 
-![](/assets/senior-research-project/anc_vregion.png){:class="img-responsive"}
+![](/assets/senior-research-project/anc_vregion.png)
 
 And now we see the reason for the strange groups. The explanation of variable region makes sense: if sequences are being taken from different parts of 16S, those differences are going to be much larger than differences between different phyla of bacteria. There are still some unanswered questions here, such as why some variable regions appear in multiple tight clusters instead of a single cluster (maybe because of some other experimental error caused by the fact that the sequencing was done by high school students from a previous year?). But on the whole, this analysis method I've come up with has proven itself as a valuable data exploration strategy.
 

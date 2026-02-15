@@ -42,9 +42,9 @@ The core logic here is that both parties would always prefer more money to go to
 
 Yes, but it's supported by the data. We can see the process of our political parties finding the Nash equilibrium in real time by looking at the amount added to the national debt under each recent president:
 
-![](/assets/2025-08-15-proof-of-stake-assets/debt-by-usa-president-036a.png){:class="img-responsive"}
+![](/assets/2025-08-15-proof-of-stake-assets/debt-by-usa-president-036a.png)
 
-Extreme partisan deficit spending began with Reagan in the 80s. Clinton actually succeeded in running a balanced budget in the year 2000, but this had exactly the effect predicted by the PD model: giving the opposing party (Bush) even more fiscal headroom to pursue a war in Iraq and Afghanistan, among other spending priorities favored by his political base. Since then, both parties have learned their lesson and become locked into the PD's Nash equilibrium. The data in this chart ends in 2021; Trump would go on to add $7.4T in his first term, and Biden would add $6.0T. At the time of writing, our national debt stands at $37.8T, and the second Trump presidency is looking to be even more fiscally irresponsible than the first.
+Extreme partisan deficit spending began with Reagan in the 80s. Clinton actually succeeded in running a balanced budget in the year 2000, but this had exactly the effect predicted by the PD model: giving the opposing party (Bush) even more fiscal headroom to pursue a war in Iraq and Afghanistan, among other spending priorities favored by his political base. Since then, both parties have learned their lesson and become locked into the PD's Nash equilibrium. The data in this chart ends in 2021; Trump would go on to add \$7.4T in his first term, and Biden would add \$6.0T. At the time of writing, our national debt stands at \$37.8T, and the second Trump presidency is looking to be even more fiscally irresponsible than the first.
 
 ### So what?
 
@@ -54,13 +54,13 @@ Option 1: Austerity measures finally bring back some relationship between tax re
 
 Option 2: Deficits keep growing until the government defaults on its debt. This is hands-down the worst outcome, as it will destroy the confidence domestic and foreign investors have in the American economy. If American bonds, considered everywhere to be the "safest" investment, prove to be prone to failure because of political instability, the subsequent de-risking and panic-selling would cause one of the worst recessions in history. It would be a global catastrophe marking the end of American hegemony and the dollar as a global reserve currency.
 
-Option 3: The Treasury finances the debt with quantitative easing (read "digital money printing"). This is the most likely outcome, as it has already been done once during the COVID-19 pandemic to pay for the American rescue plan. This spending was immediately followed by extreme inflation that was a major factor in earning Trump his second term in the White House. A similar method could theoretically be used to pay down the national debt (after all, the debt disappears if you just create $37.8T and give it to all the bondholders), but would likely cause inflation an order of magnitude worse than what was seen during COVID. The rich will survive because of inflation of their stock portfolio, but this would be devastating to anyone who lives paycheck to paycheck or keeps their savings in dollars.
+Option 3: The Treasury finances the debt with quantitative easing (read "digital money printing"). This is the most likely outcome, as it has already been done once during the COVID-19 pandemic to pay for the American rescue plan. This spending was immediately followed by extreme inflation that was a major factor in earning Trump his second term in the White House. A similar method could theoretically be used to pay down the national debt (after all, the debt disappears if you just create \$37.8T and give it to all the bondholders), but would likely cause inflation an order of magnitude worse than what was seen during COVID. The rich will survive because of inflation of their stock portfolio, but this would be devastating to anyone who lives paycheck to paycheck or keeps their savings in dollars.
 
 In other words, we are staring down the barrel of an existential threat to our democratic system and way of life. No matter which of these possibilities ultimately occurs, people will be exceptionally angry when they're forced to pay a bill that they've been promised time and again will never come due. We can already see similar chaos in [France](https://www.cbc.ca/news/world/france-confidence-vote-government-collapse-1.7628123) resulting from even a proposal from their Prime Minister that unsustainable borrowing can't continue forever. Just imagine how angry average people will be when they find out their pensions are being cut, or they got laid off in a recession, or bread and eggs cost twice what they used to.
 
 ### Can we prevent this?
 
-I am not even remotely qualified to suggest a solution to this problem. So I went ahead and wrote a paper on a potential solution:
+I am not even remotely qualified to suggest a solution to this problem. So I went ahead and wrote a [paper on a potential solution](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5393983):
 
 <object data="/assets/2025-08-15-proof-of-stake-assets/ssrn-5393983.pdf" type="application/pdf" width="100%" height="800px">
   <p>Your browser doesn't support inline PDFs. 

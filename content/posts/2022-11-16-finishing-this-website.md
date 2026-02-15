@@ -11,10 +11,10 @@ Obviously there's still stuff left to do. The Projects page is currently organiz
 
 But there's always going to be something or other to do. Perfection is a goal that no one ever reaches; for now, I'm content with what I have and comfortable declaring this website "finished". Here are some screenshots:
 
-![](/assets/2022-11-16-finishing-this-website-assets/projects-page.png){:class="img-responsive"}
+![](/assets/2022-11-16-finishing-this-website-assets/projects-page.png)
 *Screenshot of my new Projects page.*
 
-![](/assets/2022-11-16-finishing-this-website-assets/tjsp-screenshot.png){:class="img-responsive"}
+![](/assets/2022-11-16-finishing-this-website-assets/tjsp-screenshot.png)
 *Screenshot of my TJ Space Program project page.*
 
 Not too bad, right? Don't get me wrong, it's nothing compared to the beautiful websites some of my friends have with fade-ins, parallax, and things flying around. But that was never the goal—I just wanted a website that had all the information I wanted to share in one place, and that's what I created here.

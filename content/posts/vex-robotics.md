@@ -42,19 +42,19 @@ After the frustration of my 7th and 8th grade years, I resolved to move on from 
 
 ### [Tower Takeover](https://www.youtube.com/watch?v=_JVQOiw_OUU&ab_channel=VEXRobotics), 2019-2020
 
-![](/assets/vex-robotics-assets/2022-07-19-15-00-43-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-15-00-43-image.png)
 *Both coaches working with the team to diagnose a software bug at an early regionals competition.*
 
 We started work as soon as the competition rules were released, in the summer after the students' 5th grade. I soon found that coaching a team was an entirely different challenge from competing, especially since the team was essentially composed of 5th graders. Not only did my friend and I have to teach them the fundamentals of engineering, but we also had to instill discipline and a strong work ethic. We had to pull them away from their play and show them what the real world of robotics was like.
 
 Of course, it helped that every single one of them was brilliant and had the same love for robotics that my friend and I did. Once we got them to shift their attention towards our robot, we were able to work wonders that never would've been possible in my 6th grade year. Having two experienced mentors who understood engineering and knew the game in and out let the students reach their fullest potential. The team won multiple regional competitions, qualifying for the Virginia State Championship. After further robot improvements, they qualified for the VRC World Championship through the state skills competition. Sadly, the worlds competition that year was cancelled due to the pandemic.
 
-![](/assets/vex-robotics-assets/2022-07-19-14-55-17-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-14-55-17-image.png)
 *The team's 6th grade robot before states, holding its maximum of 9 cubes.*
 
 ### [Change Up](https://www.youtube.com/watch?v=Hxs0q9UoMDQ&ab_channel=VEXRobotics), 2020-2021
 
-![](/assets/vex-robotics-assets/2022-07-19-15-03-07-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-15-03-07-image.png)
 
 *The team ironing out their robot before states.*
 
@@ -73,15 +73,15 @@ At the States competition, we had to take a few losses early on because of mecha
 
 So that's what I did. I rounded everyone up during our lunch break with my co-coach and we gave them the necessary talk about how we were more than good enough to win. Then I started handing out tasks and getting people to work fixing the issues we had. Once lunch was over and we returned to matches, we went on a winning streak that further fueled our high and pushed everyone to work even harder. At several points through the competition, I used my experience with failure in my middle school years to preemptively point out issues such as unreliable hardware, loose wires, and loose joints. We ended up placing first place in qualifier matches and winning the state championship for the second year in a row.
 
-![](/assets/vex-robotics-assets/2022-07-19-11-31-21-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-11-31-21-image.png)
 *The team and their Technology Education teacher with their robot after winning the VRC Virginia State Championship.*
 
-![](/assets/vex-robotics-assets/2022-07-19-18-40-21-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-18-40-21-image.png)
 *The team with both coaches holding their state championship banner and trophy.*
 
 The journey doesn't stop there, though, because after states was the world championship, and the team wanted to completely redesign their robot to keep up with the competition. In preparation for this, I distributed work, set deadlines, and created a schedule to get everything done over the next two months. Then, in May of 2022, we all flew to Dallas, Texas for the team's first in-person VRC World Championship.
 
-![](/assets/vex-robotics-assets/2022-07-19-18-46-06-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-18-46-06-image.png)
 *2022 World Championship, Dallas, TX.*
 
 The middle school competition took place over two days, and our performance followed a similar pattern to our state competition. We were placed in one of the most difficult divisions, and our tournament bracket was stacked against us. If that weren't enough, the robot faced various software and mechanical issues that we weren't able to solve at the competition itself.
@@ -91,7 +91,7 @@ So that night, my co-coach and I did the same thing that we did at states: ralli
 <video controls width=854 height=480><source src="/assets/vex-robotics-assets/tipping-point.m4v">Your browser does not support the video tag.</video>
 *Slow motion video of our robot's game-changing 0.8 second autonomous goal rush, tested at home before the World Championship.*
 
-![](/assets/vex-robotics-assets/2022-07-19-18-59-46-image.png){:class="img-responsive"}
+![](/assets/vex-robotics-assets/2022-07-19-18-59-46-image.png)
 *The team's final robot, by the end of the World Championship.*
 
 ---
