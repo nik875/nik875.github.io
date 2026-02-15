@@ -2,8 +2,9 @@ baseURL = "https://nik875.github.io/"
 title = "CrossCurrents"
 languageCode = "en-us"
 
-# Suppress harmless warnings for embedded HTML in markdown
-ignoreLogs = ["warning-goldmark-raw-html"]
+# Allow raw HTML in markdown (needed for <video>, <iframe>, etc.)
+[markup.goldmark.renderer]
+unsafe = true
 
 # Preserve Jekyll URLs
 [permalinks]
