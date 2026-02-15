@@ -53,6 +53,12 @@
       grid-template-columns: 1fr;
     }
   }
+  @media (max-width: 768px) {
+    .featured-posts {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
   .featured-overlay {
     grid-column: 1 / -1;
     background: rgba(255, 255, 255, 0.95);
@@ -68,6 +74,11 @@
     min-height: 120px;
     color: inherit;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .featured-overlay {
+      display: none !important;
+    }
   }
   .featured-overlay.active {
     pointer-events: auto;
@@ -109,6 +120,7 @@
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
+    display: block;
   }
   @media (prefers-color-scheme: dark) {
     .featured-post {
@@ -138,6 +150,40 @@
   @media (prefers-color-scheme: dark) {
     .featured-post .meta {
       color: #aaa;
+    }
+  }
+  .featured-post .description {
+    font-style: italic;
+    color: #666;
+    margin: 0.5rem 0 0;
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured-post .description {
+      color: #999;
+    }
+  }
+  @media (max-width: 768px) {
+    .featured-post {
+      border: none;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #eee;
+      border-radius: 0;
+    }
+    @media (prefers-color-scheme: dark) {
+      .featured-post {
+        border-bottom-color: #333;
+      }
+    }
+    .featured-post:hover {
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .featured-post h3 {
+      font-size: 1.3rem;
+    }
+    .featured-post .description {
+      display: block;
     }
   }
   .tags {
@@ -488,6 +534,7 @@
   <a href="{{ .RelPermalink }}" class="featured-post" data-description="{{ with .Description }}{{ . }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 }}{{ end }}" data-url="{{ .RelPermalink }}">
     <h3>{{ .Title }}</h3>
     <div class="meta">{{ .Date.Format "January 2, 2006" }}</div>
+    <div class="description">{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}</div>
     {{ if .Params.tags }}
     <div class="tags">
       {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
@@ -501,10 +548,14 @@
 </div>
 
 <script>
+  // Only run overlay logic on desktop (> 768px)
+  const isDesktop = () => window.innerWidth > 768;
   let currentCard = null;
 
   function updateOverlay(card) {
     const overlay = card.parentElement.querySelector('.featured-overlay');
+    if (!overlay) return; // Overlay doesn't exist on mobile
+
     const content = overlay.querySelector('.featured-overlay-content');
     content.innerHTML = card.dataset.description;
     overlay.setAttribute('data-url', card.dataset.url);
@@ -519,33 +570,42 @@
     currentCard = card;
   }
 
-  // Initialize with first card highlighted
-  const firstCard = document.querySelector('.featured-post');
-  if (firstCard) {
-    updateOverlay(firstCard);
+  function initDesktopFeatures() {
+    // Initialize with first card highlighted
+    const firstCard = document.querySelector('.featured-post');
+    if (firstCard) {
+      updateOverlay(firstCard);
+    }
+
+    document.querySelectorAll('.featured-post').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        updateOverlay(card);
+      });
+    });
+
+    // Make overlay clickable to navigate to highlighted card
+    const overlay = document.querySelector('.featured-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        const url = overlay.getAttribute('data-url');
+        if (url && url !== '#') {
+          window.location.href = url;
+        }
+      });
+    }
   }
 
-  document.querySelectorAll('.featured-post').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      updateOverlay(card);
-    });
-  });
-
-  // Keep overlay visible even after mouse leaves, but allow highlighting different cards
-  document.querySelector('.featured-posts').addEventListener('mouseleave', () => {
-    // Overlay stays visible with current card
-  });
-
-  // Make overlay clickable to navigate to highlighted card
-  const overlay = document.querySelector('.featured-overlay');
-  if (overlay) {
-    overlay.addEventListener('click', () => {
-      const url = overlay.getAttribute('data-url');
-      if (url && url !== '#') {
-        window.location.href = url;
-      }
-    });
+  // Initialize if desktop, otherwise links work normally
+  if (isDesktop()) {
+    initDesktopFeatures();
   }
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (isDesktop() && !currentCard) {
+      initDesktopFeatures();
+    }
+  });
 </script>
 
 <div class="section-divider"></div>
