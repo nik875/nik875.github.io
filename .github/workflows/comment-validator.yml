@@ -20,45 +20,46 @@ jobs:
           script: |
             const minLength = 300;
             let content = '';
-            let isComment = false;
+            let commentId = null;
             
             // Get the content to check
             if (context.payload.issue) {
               content = context.payload.issue.body || '';
-              isComment = false;
             }
             if (context.payload.comment) {
               content = context.payload.comment.body || '';
-              isComment = true;
+              commentId = context.payload.comment.id;
             }
             
             // Count characters (excluding whitespace)
             const charCount = content.trim().length;
             
             if (charCount < minLength) {
-              // Post reply
-              await github.rest.issues.createComment({
+              // Post warning reply
+              const reply = await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
                 body: 'Your comment was flagged as too short and will be automatically deleted. Please elaborate further on your thoughts, I want to hear what you have to say!'
               });
               
-              // Close issue
-              await github.rest.issues.update({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                state: 'closed',
-                state_reason: 'not_planned'
-              });
+              // Delete the short comment if it's a reply comment
+              if (commentId) {
+                await github.rest.issues.deleteComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: commentId
+                });
+              } else {
+                // If it's the issue body, close the issue
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  state: 'closed',
+                  state_reason: 'not_planned'
+                });
+              }
               
-              // Delete issue
-              await github.rest.issues.deleteIssue({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number
-              });
-              
-              console.log(`Deleted issue #${context.issue.number} - too short (${charCount} characters)`);
+              console.log(`Deleted comment - too short (${charCount} characters)`);
             }
