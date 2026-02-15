@@ -33,19 +33,28 @@ jobs:
             
             if (charCount < minLength) {
               // Post warning reply
-              await github.rest.issues.createComment({
+              const botComment = await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
                 body: 'Your comment was flagged as too short and will be automatically deleted. Please elaborate further on your thoughts, I want to hear what you have to say!'
               });
               
-              // Delete the short comment
+              // Delete the user's short comment
               await github.rest.issues.deleteComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: comment.id
               });
               
-              console.log(`Deleted comment #${comment.id} - too short (${charCount} characters)`);
+              // Wait 3 seconds, then delete the bot's warning message
+              await new Promise(resolve => setTimeout(resolve, 3000));
+              
+              await github.rest.issues.deleteComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.data.id
+              });
+              
+              console.log(`Deleted comment #${comment.id} and bot message - too short (${charCount} characters)`);
             }
