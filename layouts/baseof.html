@@ -14,8 +14,6 @@
         .header-content { max-width: 800px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; flex-wrap: wrap; }
         .header-logo { max-width: 200px; height: auto; flex: 1; text-align: center; }
         .header-name { flex: 1; }
-        .logo-short { display: none; }
-        @media (max-width: 640px) { .logo-full { display: none; } .logo-short { display: inline; } }
         .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0; margin-left: auto; }
         .menu-toggle span { display: block; width: 25px; height: 3px; background: #333; margin: 5px 0; border-radius: 2px; transition: 0.3s; }
         @media (prefers-color-scheme: dark) { .menu-toggle span { background: #eee; } }
@@ -82,10 +80,7 @@
     <header>
         <div class="header-content">
             <div class="header-name">
-                <a href="/" style="text-decoration: none; color: inherit; font-size: 1.5rem;">
-                    <span class="logo-full">CrossCurrents</span>
-                    <span class="logo-short">XC</span>
-                </a>
+                <a href="/" style="text-decoration: none; color: inherit; font-size: 1.5rem;">CrossCurrents</a>
             </div>
             <div class="header-logo"></div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
