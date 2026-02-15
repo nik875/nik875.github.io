@@ -58,7 +58,7 @@
         @media (prefers-color-scheme: dark) { .tag { background: #333; color: #aaa !important; } }
         @media (prefers-color-scheme: dark) { .tag:visited { color: #aaa !important; } }
         nav { display: flex; gap: 1.5rem; margin: 0; margin-left: auto; }
-        nav a { text-decoration: none; color: inherit; }
+        nav a { text-decoration: underline; color: inherit; }
         nav a:visited { color: inherit; }
         nav a:hover { text-decoration: underline; }
         blockquote { border-left: 4px solid #ccc; padding-left: 1rem; margin: 1rem 0; color: #555; font-style: italic; }
@@ -85,7 +85,7 @@
     <header{{ if .IsHome }} class="is-home"{{ end }}>
         <div class="header-content">
             <div class="header-name{{ if not .IsHome }} show{{ end }}">
-                <a href="/" style="text-decoration: none; color: inherit;">CrossCurrents</a>
+                <a href="/" style="text-decoration: none; color: inherit; font-size: 1.5rem;">CrossCurrents</a>
             </div>
             <div class="header-logo"></div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
