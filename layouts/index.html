@@ -448,9 +448,29 @@
 </style>
 
 <div class="hero">
-  <img src="/assets/crosscurrents_title.png" alt="CrossCurrents">
+  <img id="hero-image" src="/assets/crosscurrents_title.png" alt="CrossCurrents">
   <p class="tagline">On Systems, Incentives, and Machine Intelligence</p>
 </div>
+
+<script>
+  // Detect dark mode and switch hero image
+  const heroImage = document.getElementById('hero-image');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function updateHeroImage() {
+    if (prefersDark.matches) {
+      heroImage.src = '/assets/crosscurrents_title_dark.png';
+    } else {
+      heroImage.src = '/assets/crosscurrents_title.png';
+    }
+  }
+
+  // Check on page load
+  updateHeroImage();
+
+  // Listen for system theme changes
+  prefersDark.addEventListener('change', updateHeroImage);
+</script>
 
 <div class="section-divider"></div>
 
