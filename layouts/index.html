@@ -554,8 +554,8 @@
   let desktopFeaturesActive = false;
 
   function updateOverlay(card) {
+    if (!desktopFeaturesActive) return;
     const overlay = card.parentElement.querySelector('.featured-overlay');
-    if (!overlay) return; // Overlay doesn't exist on mobile
 
     const content = overlay.querySelector('.featured-overlay-content');
     content.innerHTML = card.dataset.description;
