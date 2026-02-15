@@ -551,6 +551,7 @@
   // Only run overlay logic on desktop (> 768px)
   const isDesktop = () => window.innerWidth > 768;
   let currentCard = null;
+  let desktopFeaturesActive = false;
 
   function updateOverlay(card) {
     const overlay = card.parentElement.querySelector('.featured-overlay');
@@ -571,6 +572,9 @@
   }
 
   function initDesktopFeatures() {
+    if (desktopFeaturesActive) return; // Already initialized
+    desktopFeaturesActive = true;
+
     // Initialize with first card highlighted
     const firstCard = document.querySelector('.featured-post');
     if (firstCard) {
@@ -595,6 +599,24 @@
     }
   }
 
+  function disableDesktopFeatures() {
+    if (!desktopFeaturesActive) return; // Already disabled
+    desktopFeaturesActive = false;
+
+    // Clear highlighting
+    document.querySelectorAll('.featured-post').forEach(c => {
+      c.classList.remove('highlighted');
+    });
+
+    // Hide overlay
+    const overlay = document.querySelector('.featured-overlay');
+    if (overlay) {
+      overlay.classList.remove('active');
+    }
+
+    currentCard = null;
+  }
+
   // Initialize if desktop, otherwise links work normally
   if (isDesktop()) {
     initDesktopFeatures();
@@ -602,8 +624,10 @@
 
   // Handle window resize
   window.addEventListener('resize', () => {
-    if (isDesktop() && !currentCard) {
+    if (isDesktop()) {
       initDesktopFeatures();
+    } else {
+      disableDesktopFeatures();
     }
   });
 </script>
