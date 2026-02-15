@@ -170,11 +170,6 @@
       border-bottom: 1px solid #eee;
       border-radius: 0;
     }
-    @media (prefers-color-scheme: dark) {
-      .featured-post {
-        border-bottom-color: #333;
-      }
-    }
     .featured-post:hover {
       border-color: transparent;
       box-shadow: none;
@@ -184,6 +179,11 @@
     }
     .featured-post .description {
       display: block;
+    }
+  }
+  @media (prefers-color-scheme: dark) and (max-width: 768px) {
+    .featured-post {
+      border-bottom-color: #333;
     }
   }
   .tags {
