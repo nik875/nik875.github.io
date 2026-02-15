@@ -1,7 +1,7 @@
 ---
 title: "Insights from Playing with Language Models"
 date: 2023-03-16T20:32:00-05:00
-tags: ["build", "essay"]
+tags: ["builds", "essays"]
 draft: false
 ---
 

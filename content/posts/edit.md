@@ -1,7 +1,7 @@
 ---
 title: "EDIT ML"
 date: 2021-06-01
-tags: ["build"]
+tags: ["builds"]
 draft: false
 url: "/projects/edit.html"
 ---

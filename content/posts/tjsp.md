@@ -1,7 +1,7 @@
 ---
 title: "TJ Space Program"
 date: 2022-08-01
-tags: ["build"]
+tags: ["builds"]
 draft: false
 url: "/projects/tjsp.html"
 ---

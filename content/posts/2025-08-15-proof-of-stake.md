@@ -1,7 +1,7 @@
 ---
 title: "Can Less Democracy Save Democracy?"
 date: 2025-08-15T21:28:00-05:00
-tags: ["essay"]
+tags: ["essays"]
 draft: false
 featured: true
 ---

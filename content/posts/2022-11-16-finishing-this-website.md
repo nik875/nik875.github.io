@@ -1,11 +1,11 @@
 ---
 title: "Finishing This Website"
 date: 2022-11-16T11:37:00-05:00
-tags: ["build"]
+tags: ["builds"]
 draft: false
 ---
 
-I've finally done it: months after starting work on this website, I've completed all the essential components of this website. Notably, there's a new [My Projects](https://nik875.github.io/projects.html) page that has links to long-form descriptions of all the major projects I've taken part in over the years. The hardest part of making this was actually writing those pages, but once that was done Jekyll did the heavy lifting and generated a website to my liking. I also got dark mode working!
+I've finally done it: months after starting work on this website, I've completed all the essential components of this website. Notably, there's a new [My Projects](/projects/) page that has links to long-form descriptions of all the major projects I've taken part in over the years. The hardest part of making this was actually writing those pages, but once that was done Jekyll did the heavy lifting and generated a website to my liking. I also got dark mode working!
 
 Obviously there's still stuff left to do. The Projects page is currently organized in alphabetical order (which doesn't make much sense, it should really be chronological by when I worked on each project). There's far too little content on the Posts page (entirely my own fault for not writing enough about what I've been working on). My resume itself could also do with a few updates now that I've gotten involved with new programs at UT Austin.
 

@@ -1,7 +1,7 @@
 ---
 title: "Vex Robotics"
 date: 2022-03-15
-tags: ["build"]
+tags: ["builds"]
 draft: false
 url: "/projects/vex-robotics.html"
 ---

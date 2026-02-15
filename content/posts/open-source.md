@@ -1,7 +1,7 @@
 ---
 title: "Open Source"
 date: 2022-07-22
-tags: ["essay"]
+tags: ["essays"]
 draft: false
 ---
 
@@ -49,4 +49,4 @@ The GitHub repository for [TJ REVERB's flight software](https://github.com/TJREV
 
 ### smartshell
 
-My smartshell implementation is completely open source. A more detailed explanation of what exactly this is and how it works is available on the [GitHub](https://github.com/nik875/smartshell) and on [the posts page](https://nik875.github.io/2023/09/24/smartshell.html). Also check out [this very unprofessional demo](https://www.youtube.com/watch?v=xlufPt5SHMQ).
+My smartshell implementation is completely open source. A more detailed explanation of what exactly this is and how it works is available on the [GitHub](https://github.com/nik875/smartshell) and on [the posts page](/2023/09/24/smartshell/). Also check out [this very unprofessional demo](https://www.youtube.com/watch?v=xlufPt5SHMQ).

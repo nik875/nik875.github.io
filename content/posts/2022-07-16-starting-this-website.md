@@ -1,7 +1,7 @@
 ---
 title: "Starting This Website"
 date: 2022-07-16T20:48:00-05:00
-tags: ["build"]
+tags: ["builds"]
 draft: false
 ---
 

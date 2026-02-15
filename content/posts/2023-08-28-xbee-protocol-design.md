@@ -1,7 +1,7 @@
 ---
 title: "XBee Protocol Design (from scratch!)"
 date: 2023-08-28T14:40:00-05:00
-tags: ["build"]
+tags: ["builds"]
 draft: false
 ---
 

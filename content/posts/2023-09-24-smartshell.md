@@ -1,7 +1,7 @@
 ---
 title: "ChatGPT-integrated Smartshell"
 date: 2023-09-24T21:28:00-05:00
-tags: ["build"]
+tags: ["builds"]
 draft: false
 ---
 

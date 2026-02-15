@@ -1,0 +1,149 @@
+{{ define "main" }}
+<style>
+  nav a { color: inherit !important; }
+  nav a:visited { color: inherit !important; }
+  .taxonomy-header {
+    margin-bottom: 2rem;
+  }
+  .taxonomy-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 1rem 0 0;
+    line-height: 1.6;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-description {
+      color: #aaa;
+    }
+  }
+  .taxonomy-posts {
+    list-style: none;
+  }
+  .taxonomy-posts li {
+    margin: 2rem 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-posts li {
+      border-bottom-color: #333;
+    }
+  }
+  .taxonomy-posts li:last-child {
+    border-bottom: none;
+  }
+  .taxonomy-link {
+    display: block;
+    cursor: pointer;
+    color: inherit;
+  }
+  .taxonomy-title {
+    font-size: 1.3rem;
+    font-weight: inherit;
+  }
+  .taxonomy-link:hover .taxonomy-title {
+    text-decoration: underline;
+  }
+  .taxonomy-link .taxonomy-description-text a {
+    color: #0066cc;
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-link .taxonomy-description-text a {
+      color: #66b3ff;
+    }
+  }
+  .taxonomy-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-meta {
+      color: #aaa;
+    }
+  }
+  .taxonomy-description-text {
+    font-style: italic;
+    color: #666;
+    margin: 0.5rem 0 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-description-text {
+      color: #999;
+    }
+  }
+  .taxonomy-description-text a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-description-text a {
+      color: #66b3ff;
+    }
+  }
+  .taxonomy-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+  .taxonomy-tag {
+    font-size: 0.75rem;
+    background-color: #e8e8e8;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    text-transform: capitalize;
+  }
+  @media (prefers-color-scheme: dark) {
+    .taxonomy-tag {
+      background-color: #333;
+      color: #ccc;
+    }
+  }
+</style>
+
+<div class="taxonomy-header">
+  <h1>{{ .Title }}</h1>
+  <p class="taxonomy-description">
+    {{ if eq .Title "Essays" }}
+    Longer-form writing exploring systems, incentives, and machine intelligence.
+    {{ else if eq .Title "Builds" }}
+    Technical projects and implementations.
+    {{ else }}
+    A collection of articles.
+    {{ end }}
+  </p>
+</div>
+
+<ul class="taxonomy-posts">
+  {{ range .Pages.ByDate.Reverse }}
+  <li>
+    <div class="taxonomy-link" data-url="{{ .RelPermalink }}">
+      <div class="taxonomy-title">{{ .Title }}</div>
+      <div class="taxonomy-meta">{{ .Date.Format "January 2, 2006" }}</div>
+      <div class="taxonomy-description-text">{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}</div>
+      {{ if .Params.tags }}
+      <div class="taxonomy-tags">
+        {{ range .Params.tags }}<span class="taxonomy-tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ul>
+
+<script>
+  document.querySelectorAll('.taxonomy-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Don't navigate if clicking on a link inside the description
+      if (e.target.closest('a')) return;
+      const url = link.getAttribute('data-url');
+      if (url) window.location.href = url;
+    });
+  });
+</script>
+{{ end }}

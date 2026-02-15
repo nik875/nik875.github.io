@@ -1,7 +1,7 @@
 ---
 title: "Kubuntu Media Player and NAS"
 date: 2022-07-21T19:34:00-05:00
-tags: ["build"]
+tags: ["builds"]
 draft: false
 ---
 

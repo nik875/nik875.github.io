@@ -66,9 +66,11 @@
     pointer-events: none;
     transition: opacity 0.2s ease;
     min-height: 120px;
-    text-decoration: none;
     color: inherit;
     cursor: pointer;
+  }
+  .featured-overlay.active {
+    pointer-events: auto;
   }
   .featured-overlay.active {
     opacity: 1;
@@ -175,13 +177,28 @@
   .latest-posts li:last-child {
     border-bottom: none;
   }
-  .latest-posts a {
-    font-size: 1.3rem;
-    text-decoration: none;
+  .article-link {
+    display: block;
+    cursor: pointer;
     color: inherit;
   }
-  .latest-posts a:hover {
+  .article-title {
+    font-size: 1.3rem;
+    font-weight: inherit;
+  }
+  .article-link:hover .article-title {
     text-decoration: underline;
+  }
+  .article-link .description a {
+    color: #0066cc;
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  @media (prefers-color-scheme: dark) {
+    .article-link .description a {
+      color: #66b3ff;
+    }
   }
   .latest-meta {
     font-size: 0.85rem;
@@ -431,8 +448,15 @@
 </style>
 
 <div class="hero">
-  <img src="/assets/crosscurrents_title.png" alt="Crosscurrents">
+  <img src="/assets/crosscurrents_title.png" alt="CrossCurrents">
   <p class="tagline">On Systems, Incentives, and Machine Intelligence</p>
+</div>
+
+<div class="section-divider"></div>
+
+<div style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+  <p>If you're new here, I'd recommend visiting my <a href="/about/">about page</a> to see what this site is about.</p>
+  <p>I expect and welcome criticism, and have enabled comments on all of my posts. I enforce civility, professionalism, and meaningful contribution to the discourse via a minimum character count. Other than that, I welcome any and all contributions from researchers, industry professionals, or anybody else, regardless of background or field of study. My goal is to be proven wrong, so that I can correct my assumptions.</p>
 </div>
 
 <div class="section-divider"></div>
@@ -441,7 +465,7 @@
 
 <div class="featured-posts">
   {{ range (where (where .Site.RegularPages "Section" "posts") "Params.featured" true) | first 3 }}
-  <a href="{{ .RelPermalink }}" class="featured-post" data-description="{{ .Summary }}" data-url="{{ .RelPermalink }}">
+  <a href="{{ .RelPermalink }}" class="featured-post" data-description="{{ with .Description }}{{ . }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 }}{{ end }}" data-url="{{ .RelPermalink }}">
     <h3>{{ .Title }}</h3>
     <div class="meta">{{ .Date.Format "January 2, 2006" }}</div>
     {{ if .Params.tags }}
@@ -451,9 +475,9 @@
     {{ end }}
   </a>
   {{ end }}
-  <a href="#" class="featured-overlay" data-url="#">
+  <div class="featured-overlay" data-url="#">
     <div class="featured-overlay-content"></div>
-  </a>
+  </div>
 </div>
 
 <script>
@@ -462,8 +486,8 @@
   function updateOverlay(card) {
     const overlay = card.parentElement.querySelector('.featured-overlay');
     const content = overlay.querySelector('.featured-overlay-content');
-    content.textContent = card.dataset.description;
-    overlay.href = card.dataset.url;
+    content.innerHTML = card.dataset.description;
+    overlay.setAttribute('data-url', card.dataset.url);
     overlay.classList.add('active');
 
     // Update highlighted card styling
@@ -491,6 +515,17 @@
   document.querySelector('.featured-posts').addEventListener('mouseleave', () => {
     // Overlay stays visible with current card
   });
+
+  // Make overlay clickable to navigate to highlighted card
+  const overlay = document.querySelector('.featured-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      const url = overlay.getAttribute('data-url');
+      if (url && url !== '#') {
+        window.location.href = url;
+      }
+    });
+  }
 </script>
 
 <div class="section-divider"></div>
@@ -500,22 +535,35 @@
 <ul class="latest-posts">
   {{ range (where (where .Site.RegularPages "Section" "posts") "Params.featured" "!=" true) | first 3 }}
   <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <div class="latest-meta">{{ .Date.Format "January 2, 2006" }}</div>
-    <div class="description">{{ .Summary }}</div>
-    {{ if .Params.tags }}
-    <div class="tags">
-      {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+    <div class="article-link" data-url="{{ .RelPermalink }}">
+      <div class="article-title">{{ .Title }}</div>
+      <div class="latest-meta">{{ .Date.Format "January 2, 2006" }}</div>
+      <div class="description">{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}</div>
+      {{ if .Params.tags }}
+      <div class="tags">
+        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
     </div>
-    {{ end }}
   </li>
   {{ end }}
 </ul>
 
+<script>
+  document.querySelectorAll('.article-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Don't navigate if clicking on a link inside the description
+      if (e.target.closest('a')) return;
+      const url = link.getAttribute('data-url');
+      if (url) window.location.href = url;
+    });
+  });
+</script>
+
 <div class="section-divider"></div>
 
 <div class="rss-cta">
-  <h2>Subscribe to Crosscurrents</h2>
+  <h2>Subscribe to CrossCurrents</h2>
   <p>Get notified when new posts are published</p>
   <button class="rss-button" id="rss-button">Subscribe via RSS</button>
 </div>

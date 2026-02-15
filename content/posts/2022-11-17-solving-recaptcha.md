@@ -1,7 +1,7 @@
 ---
 title: "Bots will Win the Detection War"
 date: 2022-11-17T12:41:00-05:00
-tags: ["essay", "build"]
+tags: ["essays", "builds"]
 draft: false
 featured: true
 ---

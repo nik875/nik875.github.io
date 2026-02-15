@@ -14,5 +14,18 @@
     <div style="margin: 2rem 0; border-top: 1px solid #ddd; padding-top: 1rem;">
         {{ .Content }}
     </div>
+    <div style="margin: 2rem 0; border-top: 1px solid #ddd; padding-top: 1rem;">
+        <h2>Comments</h2>
+        <p style="color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Feedback and criticism are welcome! Please keep the discussion civil and constructive.
+        </p>
+        <script src="https://utteranc.es/client.js"
+                repo="{{ .Site.Params.github_repo }}"
+                issue-term="pathname"
+                theme="preferred-color-scheme"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
 </article>
 {{ end }}

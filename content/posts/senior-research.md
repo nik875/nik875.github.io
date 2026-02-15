@@ -1,7 +1,7 @@
 ---
 title: "Independent Research"
 date: 2022-06-01
-tags: ["build"]
+tags: ["builds"]
 draft: false
 url: "/projects/senior-research.html"
 ---

@@ -1,5 +1,5 @@
 baseURL = "https://nik875.github.io/"
-title = "Nikhil Kalidasu"
+title = "CrossCurrents"
 languageCode = "en-us"
 
 # Suppress harmless warnings for embedded HTML in markdown
@@ -8,6 +8,7 @@ ignoreLogs = ["warning-goldmark-raw-html"]
 # Preserve Jekyll URLs
 [permalinks]
 posts = "/:year/:month/:day/:slug/"
+tags = "/tags/:slug/"
 
 # Enable tagging
 [taxonomies]
@@ -22,3 +23,4 @@ taxonomy = ["HTML", "RSS"]
 [params]
 author = "Nikhil Kalidasu"
 description = "My personal website"
+github_repo = "nik875/nik875.github.io"
