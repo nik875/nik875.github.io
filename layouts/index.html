@@ -48,12 +48,7 @@
     margin-bottom: 3rem;
     position: relative;
   }
-  @media (max-width: 900px) {
-    .featured-posts {
-      grid-template-columns: 1fr;
-    }
-  }
-  @media (max-width: 768px) {
+  @media (max-width: 832px) {
     .featured-posts {
       display: block;
       margin-bottom: 0;
@@ -75,7 +70,7 @@
     color: inherit;
     cursor: pointer;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 832px) {
     .featured-overlay {
       display: none !important;
     }
@@ -163,19 +158,29 @@
       color: #999;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 832px) {
     .featured-post {
       border: none;
       padding: 1.5rem 0;
       border-bottom: 1px solid #eee;
       border-radius: 0;
+      transition: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .featured-post:last-child {
+    .featured-post:last-of-type {
       border-bottom: none;
     }
-    .featured-post:hover {
-      border-color: transparent;
+    .featured-post:hover,
+    .featured-post:active,
+    .featured-post:focus {
+      border-color: transparent transparent #eee transparent;
       box-shadow: none;
+      outline: none;
+    }
+    .featured-post:last-of-type:hover,
+    .featured-post:last-of-type:active,
+    .featured-post:last-of-type:focus {
+      border-color: transparent;
     }
     .featured-post h3 {
       font-size: 1.3rem;
@@ -184,9 +189,19 @@
       display: block;
     }
   }
-  @media (prefers-color-scheme: dark) and (max-width: 768px) {
+  @media (prefers-color-scheme: dark) and (max-width: 832px) {
     .featured-post {
       border-bottom-color: #333;
+    }
+    .featured-post:hover,
+    .featured-post:active,
+    .featured-post:focus {
+      border-color: transparent transparent #333 transparent;
+    }
+    .featured-post:last-of-type:hover,
+    .featured-post:last-of-type:active,
+    .featured-post:last-of-type:focus {
+      border-color: transparent;
     }
   }
   .tags {
@@ -552,7 +567,7 @@
 
 <script>
   // Only run overlay logic on desktop (> 768px)
-  const isDesktop = () => window.innerWidth > 768;
+  const isDesktop = () => window.innerWidth > 832;
   let currentCard = null;
   let desktopFeaturesActive = false;
 
