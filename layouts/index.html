@@ -48,7 +48,7 @@
     margin-bottom: 3rem;
     position: relative;
   }
-  @media (max-width: 832px) {
+  @media (max-width: 832px), (hover: none) {
     .featured-posts {
       display: block;
       margin-bottom: 0;
@@ -70,7 +70,7 @@
     color: inherit;
     cursor: pointer;
   }
-  @media (max-width: 832px) {
+  @media (max-width: 832px), (hover: none) {
     .featured-overlay {
       display: none !important;
     }
@@ -158,7 +158,7 @@
       color: #999;
     }
   }
-  @media (max-width: 832px) {
+  @media (max-width: 832px), (hover: none) {
     .featured-post {
       border: none;
       padding: 1.5rem 0;
@@ -189,7 +189,7 @@
       display: block;
     }
   }
-  @media (prefers-color-scheme: dark) and (max-width: 832px) {
+  @media (prefers-color-scheme: dark) and ((max-width: 832px) or (hover: none)) {
     .featured-post {
       border-bottom-color: #333;
     }
@@ -566,8 +566,8 @@
 </div>
 
 <script>
-  // Only run overlay logic on desktop (> 768px)
-  const isDesktop = () => window.innerWidth > 832;
+  // Only run overlay logic on desktop (> 832px AND has hover capability)
+  const isDesktop = () => window.innerWidth > 832 && window.matchMedia('(hover: hover)').matches;
   let currentCard = null;
   let desktopFeaturesActive = false;
 
