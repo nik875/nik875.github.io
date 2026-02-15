@@ -18,7 +18,7 @@ There's just one problem: those "incredibly though challenges" are actually real
 
 ## reCAPTCHA Solver
 
-<video controls><source src="/assets/2022-11-17-solving-recaptcha-assets/captcha-solver.mp4">Your browser does not support the video tag.</video>
+<video controls><source src="/assets/2022-11-17-solving-recaptcha-assets/captcha-solver.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 
 *A low-effort recording of my CAPTCHA solver that I definitely did not make while in class. Bonus points: Asahi Linux running on my Mac.*
 
