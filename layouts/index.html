@@ -116,6 +116,7 @@
     color: inherit;
     transition: all 0.2s ease;
     display: block;
+    cursor: pointer;
   }
   @media (prefers-color-scheme: dark) {
     .featured-post {
@@ -152,6 +153,9 @@
     color: #666;
     margin: 0.5rem 0 0;
     display: none;
+  }
+  .featured-post .description em {
+    font-style: normal;
   }
   @media (prefers-color-scheme: dark) {
     .featured-post .description {
@@ -278,6 +282,9 @@
     font-style: italic;
     color: #666;
     margin: 0.5rem 0 0;
+  }
+  .latest-posts .description em {
+    font-style: normal;
   }
   .latest-posts .description a {
     color: #0066cc;
@@ -549,16 +556,17 @@
 
 <div class="featured-posts">
   {{ range (where (where .Site.RegularPages "Section" "posts") "Params.featured" true) | first 3 }}
-  <a href="{{ .RelPermalink }}" class="featured-post" data-description="{{ with .Description }}{{ . }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 }}{{ end }}" data-url="{{ .RelPermalink }}">
+  <div class="featured-post" data-url="{{ .RelPermalink }}">
     <h3>{{ .Title }}</h3>
     <div class="meta">{{ .Date.Format "January 2, 2006" }}</div>
-    <div class="description">{{ with .Description }}{{ . | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}</div>
+    <div class="description">{{ if .Params.abstract }}{{ .Params.abstract | markdownify }}{{ else }}{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}{{ end }}</div>
+    <template class="description-html">{{ if .Params.abstract }}{{ .Params.abstract | markdownify }}{{ else }}{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}{{ end }}</template>
     {{ if .Params.tags }}
     <div class="tags">
       {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
     </div>
     {{ end }}
-  </a>
+  </div>
   {{ end }}
   <div class="featured-overlay" data-url="#">
     <div class="featured-overlay-content"></div>
@@ -576,7 +584,7 @@
     const overlay = card.parentElement.querySelector('.featured-overlay');
 
     const content = overlay.querySelector('.featured-overlay-content');
-    content.innerHTML = card.dataset.description;
+    content.innerHTML = card.querySelector('.description-html').innerHTML;
     overlay.setAttribute('data-url', card.dataset.url);
     overlay.classList.add('active');
 
@@ -635,6 +643,15 @@
     currentCard = null;
   }
 
+  // Make featured post cards clickable
+  document.querySelectorAll('.featured-post').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      const url = card.getAttribute('data-url');
+      if (url) window.location.href = url;
+    });
+  });
+
   // Initialize if desktop, otherwise links work normally
   if (isDesktop()) {
     initDesktopFeatures();
@@ -660,7 +677,7 @@
     <div class="article-link" data-url="{{ .RelPermalink }}">
       <div class="article-title">{{ .Title }}</div>
       <div class="latest-meta">{{ .Date.Format "January 2, 2006" }}</div>
-      <div class="description">{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}</div>
+      <div class="description">{{ if .Params.abstract }}{{ .Params.abstract | markdownify }}{{ else }}{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}{{ end }}</div>
       {{ if .Params.tags }}
       <div class="tags">
         {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}

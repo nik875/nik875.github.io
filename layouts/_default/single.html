@@ -11,6 +11,12 @@
         {{ end }}
     </div>
     {{ end }}
+    {{ if .Params.abstract }}
+    <div class="abstract">
+        <h3>At a glance</h3>
+        {{ .Params.abstract | markdownify }}
+    </div>
+    {{ end }}
     <div style="margin: 2rem 0; border-top: 1px solid #ddd; padding-top: 1rem;">
         {{ .Content }}
     </div>

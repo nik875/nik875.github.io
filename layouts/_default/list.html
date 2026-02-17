@@ -6,6 +6,9 @@
     <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         <div class="meta">{{ .Date.Format "January 2, 2006" }}</div>
+        {{ if .Params.abstract }}
+        <p style="margin: 0.5rem 0 0 0; color: #555;">{{ .Params.abstract | markdownify }}</p>
+        {{ end }}
     </li>
     {{ end }}
 </ul>
