@@ -18,6 +18,7 @@
   }
   .taxonomy-posts {
     list-style: none;
+    padding-left: 0;
   }
   .taxonomy-posts li {
     margin: 2rem 0;
@@ -69,6 +70,9 @@
     font-style: italic;
     color: #666;
     margin: 0.5rem 0 0;
+  }
+  .taxonomy-description-text em {
+    font-style: normal;
   }
   @media (prefers-color-scheme: dark) {
     .taxonomy-description-text {
@@ -125,7 +129,7 @@
     <div class="taxonomy-link" data-url="{{ .RelPermalink }}">
       <div class="taxonomy-title">{{ .Title }}</div>
       <div class="taxonomy-meta">{{ .Date.Format "January 2, 2006" }}</div>
-      <div class="taxonomy-description-text">{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}</div>
+      <div class="taxonomy-description-text">{{ if .Params.abstract }}{{ .Params.abstract | markdownify }}{{ else }}{{ with .Description }}{{ . | safeHTML }}{{ else }}{{ index (findRE "<p>.*?</p>" .Summary 1) 0 | safeHTML }}{{ end }}{{ end }}</div>
       {{ if .Params.tags }}
       <div class="taxonomy-tags">
         {{ range .Params.tags }}<span class="taxonomy-tag">{{ . }}</span>{{ end }}
