@@ -62,10 +62,12 @@ In other words, we are staring down the barrel of an existential threat to our d
 
 I am not even remotely qualified to suggest a solution to this problem. So I went ahead and wrote a [paper on a potential solution](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5393983):
 
-<object data="/assets/2025-08-15-proof-of-stake-assets/ssrn-5393983.pdf" type="application/pdf" width="100%" height="800px">
-  <p>Your browser doesn't support inline PDFs. 
-  <a href="/assets/2025-08-15-proof-of-stake-assets/ssrn-5393983.pdf">Download the paper instead.</a></p>
-</object>
+<div style="text-align: center;">
+    <object data="/assets/2025-08-15-proof-of-stake-assets/ssrn-5393983.pdf" type="application/pdf" width="95%" height="800px">
+      <p>Your browser doesn't support inline PDFs. 
+      <a href="/assets/2025-08-15-proof-of-stake-assets/ssrn-5393983.pdf">Download the paper instead.</a></p>
+    </object>
+</div>
 
 In short, we may be able to break the PD gridlock by adding a third player: the actual holders of the bonds and owners of public debt. These people are purely rational economic actors and entirely disconnected from electoral politics, seeking only to maximize their own profits by investing in American stability and confidence. A debt default would be catastrophic to their investment as their loan would never get paid back. Quantitative easing would be similarly catastrpohic, as despite their principal having been returned with interest, that money is now worth far less than it used to be.
 
