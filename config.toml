@@ -25,3 +25,5 @@ taxonomy = ["HTML", "RSS"]
 author = "Nikhil Kalidasu"
 description = "My personal website"
 github_repo = "nik875/nik875.github.io"
+supabase_url = "https://hoirztfcqwwbuysteeeo.supabase.co"
+supabase_publishable_key = "sb_publishable_pR2rrr5U61QB8ulRmg4Trg_mfec0hSk"

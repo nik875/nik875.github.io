@@ -326,6 +326,12 @@
       color: #aaa;
     }
   }
+  .subscribe-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .rss-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -339,17 +345,108 @@
     font-size: 1rem;
     transition: opacity 0.2s ease;
   }
+  .rss-button.secondary {
+    background: transparent;
+    color: #333;
+    border: 1px solid #333;
+  }
   @media (prefers-color-scheme: dark) {
     .rss-button {
       background: #555;
+    }
+    .rss-button.secondary {
+      background: transparent;
+      color: #ddd;
+      border-color: #777;
     }
   }
   .rss-button:hover,
   .rss-button:visited {
     color: white;
   }
+  .rss-button.secondary,
+  .rss-button.secondary:visited {
+    color: #333;
+  }
+  @media (prefers-color-scheme: dark) {
+    .rss-button.secondary,
+    .rss-button.secondary:visited {
+      color: #ddd;
+    }
+  }
   .rss-button:hover {
     opacity: 0.9;
+  }
+  .email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .email-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  @media (prefers-color-scheme: dark) {
+    .email-input {
+      background: #2a2a2a;
+      color: #eee;
+      border-color: #444;
+    }
+  }
+  .email-submit {
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .email-submit {
+      background: #555;
+    }
+  }
+  .email-submit:hover {
+    opacity: 0.9;
+  }
+  .email-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .email-error {
+    color: #c5221f;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0;
+    display: none;
+  }
+  .email-error.active {
+    display: block;
+  }
+  @media (prefers-color-scheme: dark) {
+    .email-error {
+      color: #ff9a93;
+    }
+  }
+  .email-success-content {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .email-success-content p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  .email-success-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
   .rss-modal {
     display: none;
@@ -703,7 +800,34 @@
 <div class="rss-cta">
   <h2>Subscribe to CrossCurrents</h2>
   <p>Get notified when new posts are published</p>
-  <button class="rss-button" id="rss-button">Subscribe via RSS</button>
+  <div class="subscribe-buttons">
+    <button class="rss-button" id="email-button">Subscribe via Email</button>
+    <button class="rss-button secondary" id="rss-button">Subscribe via RSS</button>
+  </div>
+</div>
+
+<div class="rss-modal" id="email-modal">
+  <div class="rss-modal-content">
+    <div id="email-modal-form-view">
+      <h2>Subscribe via Email</h2>
+      <p class="rss-instructions">Enter your email and we'll send you a confirmation link. After confirming, you'll get an email each time a new post is published.</p>
+      <form class="email-form" id="email-form">
+        <input type="email" id="email-input" class="email-input" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="email-submit" id="email-submit">Subscribe</button>
+        <p class="email-error" id="email-error"></p>
+      </form>
+    </div>
+    <div id="email-modal-success-view" style="display: none;">
+      <div class="email-success-content">
+        <div class="email-success-icon">📬</div>
+        <h2>Check your inbox</h2>
+        <p>We sent a confirmation link to <strong id="email-success-address"></strong>.</p>
+        <p>Click the link in that email to finish subscribing. If you don't see it, check your spam folder.</p>
+      </div>
+    </div>
+    <button class="rss-modal-close" id="email-modal-close">Close</button>
+  </div>
+  <div class="rss-modal-backdrop" id="email-modal-backdrop"></div>
 </div>
 
 <div class="rss-modal" id="rss-modal">
@@ -787,5 +911,88 @@
   rssFilters.forEach(filter => {
     filter.addEventListener('change', updateFeedUrl);
   });
+
+  // Email subscription modal
+  const SUPABASE_URL = {{ .Site.Params.supabase_url | jsonify | safeJS }};
+  const SUPABASE_PUBLISHABLE_KEY = {{ .Site.Params.supabase_publishable_key | jsonify | safeJS }};
+
+  const emailButton = document.getElementById('email-button');
+  const emailModal = document.getElementById('email-modal');
+  const emailModalBackdrop = document.getElementById('email-modal-backdrop');
+  const emailModalClose = document.getElementById('email-modal-close');
+  const emailForm = document.getElementById('email-form');
+  const emailInput = document.getElementById('email-input');
+  const emailSubmit = document.getElementById('email-submit');
+  const emailError = document.getElementById('email-error');
+  const emailFormView = document.getElementById('email-modal-form-view');
+  const emailSuccessView = document.getElementById('email-modal-success-view');
+  const emailSuccessAddress = document.getElementById('email-success-address');
+
+  function openEmailModal() {
+    emailModal.classList.add('active');
+    emailFormView.style.display = '';
+    emailSuccessView.style.display = 'none';
+    emailError.classList.remove('active');
+    emailError.textContent = '';
+    emailInput.value = '';
+    setTimeout(() => emailInput.focus(), 50);
+  }
+
+  function closeEmailModal() {
+    emailModal.classList.remove('active');
+  }
+
+  function showEmailSuccess(email) {
+    emailFormView.style.display = 'none';
+    emailSuccessView.style.display = '';
+    emailSuccessAddress.textContent = email;
+  }
+
+  function showEmailError(message) {
+    emailError.textContent = message;
+    emailError.classList.add('active');
+  }
+
+  async function submitEmail(event) {
+    event.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+    if (!email) return;
+
+    emailSubmit.disabled = true;
+    emailSubmit.textContent = 'Subscribing...';
+    emailError.classList.remove('active');
+
+    try {
+      const confirmToken = crypto.randomUUID();
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/subscribe`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_PUBLISHABLE_KEY,
+          'Authorization': `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        },
+        body: JSON.stringify({ p_email: email, p_confirm_token: confirmToken })
+      });
+
+      if (response.ok) {
+        showEmailSuccess(email);
+      } else {
+        const text = await response.text();
+        console.error('Subscribe failed:', response.status, text);
+        showEmailError("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error('Subscribe error:', err);
+      showEmailError("Network error. Please check your connection and try again.");
+    } finally {
+      emailSubmit.disabled = false;
+      emailSubmit.textContent = 'Subscribe';
+    }
+  }
+
+  emailButton.addEventListener('click', openEmailModal);
+  emailModalClose.addEventListener('click', closeEmailModal);
+  emailModalBackdrop.addEventListener('click', closeEmailModal);
+  emailForm.addEventListener('submit', submitEmail);
 </script>
 {{ end }}

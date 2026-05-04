@@ -1,0 +1,49 @@
+name: Notify Subscribers on New Post
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: 'Path to post file (e.g. content/posts/2026-05-01-SPAR.md)'
+        required: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new posts
+        id: new_posts
+        run: |
+          if [ -n "${{ inputs.post_path }}" ]; then
+            NEW_FILES="${{ inputs.post_path }}"
+          else
+            NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep '^content/posts/.*\.md$' || true)
+          fi
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$NEW_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - uses: actions/setup-node@v4
+        if: steps.new_posts.outputs.files != ''
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        if: steps.new_posts.outputs.files != ''
+        run: npm install gray-matter nodemailer
+
+      - name: Send author notification
+        if: steps.new_posts.outputs.files != ''
+        run: node scripts/check-new-posts.js
+        env:
+          NEW_POST_FILES: ${{ steps.new_posts.outputs.files }}
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_TOKEN: ${{ secrets.SMTP_TOKEN }}

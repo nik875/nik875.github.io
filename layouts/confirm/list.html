@@ -1,0 +1,82 @@
+{{ define "main" }}
+<style>
+  .confirm-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  .confirm-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .confirm-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .confirm-container p {
+    color: #666;
+    line-height: 1.6;
+  }
+  @media (prefers-color-scheme: dark) {
+    .confirm-container p { color: #aaa; }
+  }
+</style>
+
+<div class="confirm-container">
+  <div id="confirm-loading">
+    <div class="confirm-icon">⏳</div>
+    <h1>Confirming your subscription…</h1>
+  </div>
+  <div id="confirm-success" style="display:none">
+    <div class="confirm-icon">🎉</div>
+    <h1>You're subscribed!</h1>
+    <p>You'll receive an email the next time a new post is published.</p>
+  </div>
+  <div id="confirm-error" style="display:none">
+    <div class="confirm-icon">❌</div>
+    <h1>Invalid link</h1>
+    <p>This confirmation link is invalid or has already been used. Try subscribing again from the <a href="/">homepage</a>.</p>
+  </div>
+</div>
+
+<script>
+  const SUPABASE_URL = {{ .Site.Params.supabase_url | jsonify | safeJS }};
+  const SUPABASE_PUBLISHABLE_KEY = {{ .Site.Params.supabase_publishable_key | jsonify | safeJS }};
+
+  async function confirm() {
+    const token = new URLSearchParams(window.location.search).get('token');
+
+    if (!token) {
+      showState('error');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/confirm_subscription`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_PUBLISHABLE_KEY,
+          'Authorization': `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        },
+        body: JSON.stringify({ p_token: token })
+      });
+
+      const confirmed = await response.json();
+      showState(confirmed === true ? 'success' : 'error');
+    } catch (err) {
+      console.error('Confirm error:', err);
+      showState('error');
+    }
+  }
+
+  function showState(state) {
+    document.getElementById('confirm-loading').style.display = 'none';
+    document.getElementById('confirm-success').style.display = state === 'success' ? '' : 'none';
+    document.getElementById('confirm-error').style.display = state === 'error' ? '' : 'none';
+  }
+
+  confirm();
+</script>
+{{ end }}

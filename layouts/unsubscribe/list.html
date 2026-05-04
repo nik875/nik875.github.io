@@ -1,0 +1,82 @@
+{{ define "main" }}
+<style>
+  .unsubscribe-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  .unsubscribe-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .unsubscribe-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .unsubscribe-container p {
+    color: #666;
+    line-height: 1.6;
+  }
+  @media (prefers-color-scheme: dark) {
+    .unsubscribe-container p { color: #aaa; }
+  }
+</style>
+
+<div class="unsubscribe-container">
+  <div id="unsubscribe-loading">
+    <div class="unsubscribe-icon">⏳</div>
+    <h1>Unsubscribing…</h1>
+  </div>
+  <div id="unsubscribe-success" style="display:none">
+    <div class="unsubscribe-icon">👋</div>
+    <h1>You've been unsubscribed</h1>
+    <p>You won't receive any more emails from CrossCurrents. You can always <a href="/">resubscribe</a> if you change your mind.</p>
+  </div>
+  <div id="unsubscribe-error" style="display:none">
+    <div class="unsubscribe-icon">❌</div>
+    <h1>Invalid link</h1>
+    <p>This unsubscribe link is invalid. If you're still receiving emails, <a href="/">visit the homepage</a> to manage your subscription.</p>
+  </div>
+</div>
+
+<script>
+  const SUPABASE_URL = {{ .Site.Params.supabase_url | jsonify | safeJS }};
+  const SUPABASE_PUBLISHABLE_KEY = {{ .Site.Params.supabase_publishable_key | jsonify | safeJS }};
+
+  async function unsubscribe() {
+    const token = new URLSearchParams(window.location.search).get('token');
+
+    if (!token) {
+      showState('error');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/unsubscribe`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_PUBLISHABLE_KEY,
+          'Authorization': `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        },
+        body: JSON.stringify({ p_token: token })
+      });
+
+      // Always show success — don't reveal whether the token existed
+      showState(response.ok ? 'success' : 'error');
+    } catch (err) {
+      console.error('Unsubscribe error:', err);
+      showState('error');
+    }
+  }
+
+  function showState(state) {
+    document.getElementById('unsubscribe-loading').style.display = 'none';
+    document.getElementById('unsubscribe-success').style.display = state === 'success' ? '' : 'none';
+    document.getElementById('unsubscribe-error').style.display = state === 'error' ? '' : 'none';
+  }
+
+  unsubscribe();
+</script>
+{{ end }}
