@@ -18,11 +18,20 @@ if (!NEW_POST_FILES) {
 
 const files = NEW_POST_FILES.split('\n').filter(Boolean);
 
-function deriveUrl(filepath) {
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/[\s]+/g, '-');
+}
+
+function deriveUrl(filepath, title, frontmatterSlug) {
   const filename = path.basename(filepath, '.md');
-  const match = filename.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);
+  const match = filename.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!match) return null;
-  const [, year, month, day, slug] = match;
+  const [, year, month, day] = match;
+  const slug = frontmatterSlug || slugify(title);
   return `/${year}/${month}/${day}/${slug}/`;
 }
 
@@ -42,7 +51,7 @@ function extractMetadata(filepath) {
     excerpt = (paras[0] || '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_]/g, '');
   }
 
-  const url = deriveUrl(filepath);
+  const url = deriveUrl(filepath, title, data.slug);
   return url ? { title, excerpt, url } : null;
 }
 
