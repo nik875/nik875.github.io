@@ -105,16 +105,20 @@ Deno.serve(async (req) => {
         `Unsubscribe: ${unsubscribeUrl}`,
       ].join("\n"),
       html: `
-        <p>New on CrossCurrents:</p>
-        <h2 style="margin:0.5rem 0">
-          <a href="${postLink}" style="color:#0066cc;text-decoration:none">${notification.post_title}</a>
-        </h2>
-        ${notification.post_excerpt ? `<p style="color:#555;font-style:italic">${notification.post_excerpt}</p>` : ""}
-        <p><a href="${postLink}">Read the full post →</a></p>
-        <p style="margin-top:2rem;font-size:0.85em;color:#999">
-          You're receiving this because you subscribed to CrossCurrents.<br>
-          <a href="${unsubscribeUrl}" style="color:#999">Unsubscribe</a>
-        </p>
+        <div style="max-width:600px;margin:0 auto;padding:2rem 1.5rem;font-family:Georgia,serif;color:#333;">
+          <p style="margin:0 0 0.5rem;color:#555;font-size:0.9em">New on CrossCurrents</p>
+          <h2 style="margin:0 0 1rem;font-size:1.5rem;line-height:1.3">${notification.post_title}</h2>
+          ${notification.post_excerpt ? `<p style="margin:0 0 1.5rem;color:#555;font-style:italic;line-height:1.6">${notification.post_excerpt}</p>` : ""}
+          <p style="margin:0 0 2rem">
+            <a href="${postLink}" style="display:inline-block;padding:0.75rem 1.5rem;background:#333;color:white;text-decoration:none;border-radius:4px;font-family:sans-serif;font-size:0.95rem">
+              Read the full post
+            </a>
+          </p>
+          <p style="margin:0;font-size:0.8em;color:#aaa;border-top:1px solid #eee;padding-top:1rem">
+            You're receiving this because you subscribed to CrossCurrents.
+            <a href="${unsubscribeUrl}" style="color:#aaa">Unsubscribe</a>
+          </p>
+        </div>
       `,
     });
   }
