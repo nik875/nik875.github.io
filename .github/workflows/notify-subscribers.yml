@@ -44,6 +44,6 @@ jobs:
         env:
           NEW_POST_FILES: ${{ steps.new_posts.outputs.files }}
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          SUPABASE_SECRET_KEY: ${{ secrets.DB_SECRET_KEY }}
+          DB_SECRET_KEY: ${{ secrets.DB_SECRET_KEY }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_TOKEN: ${{ secrets.SMTP_TOKEN }}
