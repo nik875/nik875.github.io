@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_SECRET_KEY = process.env.SUPABASE_SECRET_KEY;
+const SUPABASE_SECRET_KEY = process.env.DB_SECRET_KEY;
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_TOKEN = process.env.SMTP_TOKEN;
 const SITE_URL = process.env.SITE_URL || 'https://crosscurrents.ink';

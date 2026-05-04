@@ -24,7 +24,7 @@ function htmlPage(title: string, body: string, status = 200): Response {
   <p style="margin-top:2rem"><a href="${SITE_URL}">← CrossCurrents</a></p>
 </body>
 </html>`,
-    { status, headers: { "Content-Type": "text/html" } }
+    { status, headers: { "Content-Type": "text/html; charset=utf-8" } }
   );
 }
 
@@ -37,7 +37,7 @@ Deno.serve(async (req) => {
 
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    Deno.env.get("DB_SECRET_KEY")!
   );
 
   const { data: notification, error } = await supabase
@@ -61,10 +61,15 @@ Deno.serve(async (req) => {
     return htmlPage("Link Expired", "<p>This link expired 30 days after the post was published. Subscribe from the homepage to notify manually.</p>", 410);
   }
 
-  const { data: subscribers } = await supabase
+  const { data: subscribers, error: subError } = await supabase
     .from("subscribers")
     .select("email, unsubscribe_token")
     .eq("confirmed", true);
+
+  if (subError) {
+    console.error("Failed to fetch subscribers:", subError);
+    return htmlPage("Error", `<p>Failed to fetch subscribers: ${subError.message}</p>`, 500);
+  }
 
   const count = subscribers?.length ?? 0;
 

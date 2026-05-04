@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_SECRET_KEY = process.env.SUPABASE_SECRET_KEY;
+const SUPABASE_SECRET_KEY = process.env.DB_SECRET_KEY;
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_TOKEN = process.env.SMTP_TOKEN;
 const AUTHOR_EMAIL = 'nikhil@kalidasu.com';
