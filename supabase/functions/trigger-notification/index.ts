@@ -21,7 +21,7 @@ function htmlPage(title: string, body: string, status = 200): Response {
 <body>
   <h1>${title}</h1>
   ${body}
-  <p style="margin-top:2rem"><a href="${SITE_URL}">← CrossCurrents</a></p>
+  <p style="margin-top:2rem"><a href="${SITE_URL}">&larr; CrossCurrents</a></p>
 </body>
 </html>`,
     { status, headers: { "Content-Type": "text/html; charset=utf-8" } }
@@ -94,7 +94,7 @@ Deno.serve(async (req) => {
     await transporter.sendMail({
       from: `CrossCurrents <${Deno.env.get("SMTP_USER")}>`,
       to: email,
-      subject: `New post: ${notification.post_title}`,
+      subject: `CrossCurrents: ${notification.post_title}`,
       text: [
         `New on CrossCurrents: ${notification.post_title}`,
         "",
