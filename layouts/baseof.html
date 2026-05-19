@@ -95,7 +95,7 @@
         }
         @media (max-width: 640px) {
             .nav-subscribe-wrapper { width: 100%; }
-            .nav-subscribe-btn { padding: 0.5rem 0; display: block; width: 100%; text-align: left; }
+            .nav-subscribe-btn { padding: 0.5rem 0; display: block; width: 100%; text-align: center; }
             .nav-subscribe-dropdown { position: static; box-shadow: none; border: none; border-radius: 0; padding-left: 1rem; }
             .nav-subscribe-option { padding: 0.4rem 0; }
         }
@@ -201,7 +201,7 @@
         if (article) {
             article.querySelectorAll('a').forEach(link => {
                 const href = link.getAttribute('href');
-                // Open all links in articles in new tab, but only add noopener for external links
+                if (href && href.startsWith('#')) return;
                 link.setAttribute('target', '_blank');
                 if (href && (href.startsWith('http://') || href.startsWith('https://')) && !href.includes(window.location.hostname)) {
                     link.setAttribute('rel', 'noopener noreferrer');
