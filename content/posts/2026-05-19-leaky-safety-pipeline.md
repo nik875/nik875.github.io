@@ -7,6 +7,8 @@ abstract: "Many programs and fellowships exist in the AI safety community to get
 featured: false
 ---
 
+![](/assets/2026-05-19-leaky-safety-pipeline-assets/pipeline.jpeg)
+
 *This post was submitted to LessWrong and is targeted specifically to that community.*
 
 [My first AI security paper](https://arxiv.org/abs/2604.02457) as an independent researcher (with [one other](https://www.linkedin.com/in/sahana-ganapathy/) independent collaborator) was just accepted to the Security in Machine Learning Applications workshop at ACNS 2026. This was an 8-month process: I spent 2 weeks convincing myself that what I was trying to do was possible, 4 months building, evaluating, and collecting results, and another 4 months writing the paper (and making strategic mistakes) before submitting.
