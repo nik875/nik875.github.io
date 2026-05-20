@@ -45,7 +45,7 @@ I am still thinking through exactly what a "BlueDot-style resource" for turning 
 
 I'd like to coordinate with 3-5 people to develop this resource, comment if interested or if you have thoughts on what it should look like.
 
-[^1]: Out of roughly a dozen of my friends in the EA community who have gone through BlueDot, very few (including myself) have subsequently published peer-reviewed technical AI safety work. One other friend I have does alignment research in an academic lab, but never really bothered with these fellowships and trainings. Many have applied to more competitive fellowships like MATS, but none have been accepted. All have expressed significant interest in doing more for the field, but have cited a lack of mentorship and guidance as their reasons for giving up on research.
+[^1]: Out of roughly a dozen of my friends in the EA community who have gone through BlueDot, very few (including myself) have subsequently published peer-reviewed technical AI safety work. Many have applied to more competitive fellowships like MATS, but none have been accepted. All have expressed significant interest in doing more for the field, but have cited a lack of mentorship and guidance as their reasons for giving up on research.
 
 [^2]: Do not be grubby about authorship either. I do not believe there is any valor in sole-author papers. Bring on collaborators who are equally passionate about your project, even if they aren't as technical, and use them to refine your thinking.
 
