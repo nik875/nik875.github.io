@@ -9,22 +9,46 @@
   .hero img {
     width: 100%;
     height: auto;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1rem 0;
     display: block;
   }
   .hero h1 {
     font-size: 3rem;
     margin: 1rem 0;
   }
-  .hero .tagline {
-    font-size: 1.2rem;
+  .hero .byline-row {
+    margin: 0.5rem 0 2.5rem 0;
+  }
+  .hero .byline-row .tagline,
+  .hero .byline-row .name {
+    font-size: 1.05rem;
     font-style: italic;
-    color: #666;
-    margin: 0 0 3rem 0;
+    font-weight: 400;
+    color: #555;
+  }
+  .hero .byline-row .sep {
+    color: #bbb;
+    margin: 0 0.75em;
+  }
+  .hero .byline-row .name {
+    white-space: nowrap; /* wrap as a whole unit, never mid-name */
+  }
+  @media (max-width: 640px) {
+    .hero .byline-row .sep {
+      display: none;
+    }
+    .hero .byline-row .name {
+      display: block; /* name moves to its own line */
+      margin-top: 0.25rem;
+    }
   }
   @media (prefers-color-scheme: dark) {
-    .hero .tagline {
-      color: #999;
+    .hero .byline-row .tagline,
+    .hero .byline-row .name {
+      color: #aaa;
+    }
+    .hero .byline-row .sep {
+      color: #555;
     }
   }
   .section-divider {
@@ -364,7 +388,11 @@
 
 <div class="hero">
   <img id="hero-image" src="/assets/crosscurrents_title.png" alt="CrossCurrents">
-  <p class="tagline">On Systems, Incentives, and Machine Intelligence</p>
+  <p class="byline-row">
+    <span class="tagline">On Systems, Incentives, and Machine Intelligence</span>
+    <span class="sep">&middot;</span>
+    <span class="name">Nikhil Kalidasu</span>
+  </p>
 </div>
 
 <script>
@@ -390,7 +418,7 @@
 <div class="section-divider"></div>
 
 <div style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
-  <p>If you're new here, I'd recommend visiting my <a href="/about/">about page</a> to see what this site is about. I expect and welcome criticism from researchers, industry professionals, or anybody else, regardless of background or field of study. My goal is to be proven wrong, so that I can correct my assumptions.</p>
+  <p>If you're new here, I'd recommend visiting my <a href="/about/">about page</a> to see what this site is about. I expect and welcome feedback from researchers, industry professionals, or anybody else, regardless of background or field of study. I'm always looking for opportunities to correct my assumptions.</p>
 </div>
 
 <div class="section-divider"></div>

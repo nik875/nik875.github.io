@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} - {{ .Title }}{{ end }}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital@0;1&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital@0;1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: "Source Serif 4", serif; line-height: 1.6; color: #333; background: #fff; }
@@ -13,6 +13,7 @@
         @media (prefers-color-scheme: dark) { header { border-bottom-color: #444; } }
         .header-content { max-width: 800px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; flex-wrap: wrap; }
         .header-logo { max-width: 200px; height: auto; flex: 1; text-align: center; }
+        .header-name { line-height: 0; }
         .header-name { flex: 1; }
         .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0; margin-left: auto; }
         .menu-toggle span { display: block; width: 25px; height: 3px; background: #333; margin: 5px 0; border-radius: 2px; transition: 0.3s; }
@@ -101,6 +102,34 @@
         }
         blockquote { border-left: 4px solid #ccc; padding-left: 1rem; margin: 1rem 0; color: #555; font-style: italic; }
         @media (prefers-color-scheme: dark) { blockquote { border-left-color: #555; color: #bbb; } }
+        hr { border: none; border-top: 1px solid #d5d5d5; margin: 2rem auto; width: 72%; }
+        @media (prefers-color-scheme: dark) { hr { border-top-color: #3a3a3a; } }
+        .profile-figure {
+            float: right;
+            margin: 0 0 1rem 1.5rem;
+        }
+        .profile-photo {
+            display: block;
+            width: 220px;
+            height: 240px; /* ~11:12 frame — any uploaded image will be center-cropped to fit */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .profile-figure figcaption {
+            font-size: 1.05rem;
+            font-style: italic;
+            font-weight: 400;
+            color: #555;
+            text-align: center;
+            margin-top: 0.4rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            .profile-figure figcaption { color: #aaa; }
+        }
+        @media (max-width: 640px) {
+            .profile-figure { margin: 0 0 0.75rem 1rem; }
+            .profile-photo { width: 140px; height: 153px; }
+        }
         .abstract { background: #f5f5f5; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0; }
         .abstract h3 { margin-top: 0; margin-bottom: 0.75rem; font-size: 1.2rem; }
         @media (prefers-color-scheme: dark) { .abstract { background: #2a2a2a; } }
@@ -126,7 +155,28 @@
     <header>
         <div class="header-content">
             <div class="header-name">
-                <a href="/" style="text-decoration: none; color: inherit; font-size: 1.15rem; font-family: 'Playfair Display', serif;">CrossCurrents</a>
+                <a href="/" aria-label="CrossCurrents home" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;">
+                    <svg class="header-icon" width="75" height="30" viewBox="-9 -5 138 55" fill="none" aria-hidden="true">
+                        <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+                            <path d="M1 10 C 28 -3, 84 23, 119 2"/>
+                            <path d="M1 34 C 28 21, 84 47, 119 26"/>
+                        </g>
+                        <g fill="currentColor">
+                            <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(119 2) rotate(-31)"/>
+                            <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(119 26) rotate(-31)"/>
+                        </g>
+                        <g opacity="0.45">
+                            <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+                                <path d="M1 22 C 28 9, 84 35, 119 14"/>
+                                <path d="M1 46 C 28 33, 84 59, 119 38"/>
+                            </g>
+                            <g fill="currentColor">
+                                <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(1 22) rotate(154.3)"/>
+                                <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(1 46) rotate(154.3)"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
             </div>
             <div class="header-logo"></div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
