@@ -6,7 +6,7 @@
     max-width: 800px;
     padding: 0 1rem;
   }
-  .hero img {
+  .hero svg.hero-banner {
     width: 100%;
     height: auto;
     margin: 0 0 1rem 0;
@@ -387,33 +387,47 @@
 </style>
 
 <div class="hero">
-  <img id="hero-image" src="/assets/crosscurrents_title.png" alt="CrossCurrents">
+  <!-- Banner: title text font/size controlled on the <text> element below -->
+  <svg role="img" aria-label="CrossCurrents" class="hero-banner" width="1000" height="224" viewBox="0 0 1000 224" fill="none">
+    <!-- currents: dark ones flow forward (right), light ones flow back (left) -->
+    <g class="wave-fwd">
+      <g stroke="currentColor" stroke-width="4.5" stroke-linecap="round" fill="none">
+        <path d="M15 22 C 85 6, 187 6, 257 22 C 327 38, 429 38, 499 22 C 569 6, 671 6, 741 22 C 811 38, 913 38, 983 22"/>
+        <path d="M15 82 C 59 72, 116 68, 170 71"/>
+        <path d="M830 93 C 883 96, 939 92, 983 82"/>
+        <path d="M15 142 C 59 132, 116 128, 170 131"/>
+        <path d="M830 153 C 883 156, 939 152, 983 142"/>
+        <path d="M15 202 C 85 186, 187 186, 257 202 C 327 218, 429 218, 499 202 C 569 186, 671 186, 741 202 C 811 218, 913 218, 983 202"/>
+      </g>
+      <g fill="currentColor">
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(983 22) rotate(-12.9)"/>
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(983 82) rotate(-12.9)"/>
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(983 142) rotate(-12.9)"/>
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(983 202) rotate(-12.9)"/>
+      </g>
+    </g>
+    <g class="wave-back">
+      <g stroke="currentColor" stroke-width="3.25" stroke-linecap="round" fill="none">
+        <path d="M15 52 C 85 36, 187 36, 257 52 C 327 68, 429 68, 499 52 C 569 36, 671 36, 741 52 C 811 68, 913 68, 983 52"/>
+        <path d="M15 112 C 59 102, 116 98, 170 101"/>
+        <path d="M830 123 C 883 126, 939 122, 983 112"/>
+        <path d="M15 172 C 85 156, 187 156, 257 172 C 327 188, 429 188, 499 172 C 569 156, 671 156, 741 172 C 811 188, 913 188, 983 172"/>
+      </g>
+      <g fill="currentColor">
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(15 52) rotate(167.1)"/>
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(15 112) rotate(167.1)"/>
+        <path d="M0 -6.2 L12 0 L0 6.2 Z" transform="translate(15 172) rotate(167.1)"/>
+      </g>
+    </g>
+    <!-- title: adjust font-family / font-size here -->
+    <text x="500" y="141" text-anchor="middle" font-family="'Source Serif 4', Georgia, serif" font-size="88" fill="currentColor">CrossCurrents</text>
+  </svg>
   <p class="byline-row">
     <span class="tagline">On Systems, Incentives, and Machine Intelligence</span>
     <span class="sep">&middot;</span>
     <span class="name">Nikhil Kalidasu</span>
   </p>
 </div>
-
-<script>
-  // Detect dark mode and switch hero image
-  const heroImage = document.getElementById('hero-image');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-  function updateHeroImage() {
-    if (prefersDark.matches) {
-      heroImage.src = '/assets/crosscurrents_title_dark.png';
-    } else {
-      heroImage.src = '/assets/crosscurrents_title.png';
-    }
-  }
-
-  // Check on page load
-  updateHeroImage();
-
-  // Listen for system theme changes
-  prefersDark.addEventListener('change', updateHeroImage);
-</script>
 
 <div class="section-divider"></div>
 

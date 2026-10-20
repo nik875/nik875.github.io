@@ -12,6 +12,13 @@
         header { border-bottom: 1px solid #ddd; padding: 1rem 0; margin: 0; position: relative; }
         @media (prefers-color-scheme: dark) { header { border-bottom-color: #444; } }
         .header-content { max-width: 800px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; flex-wrap: wrap; }
+        /* arrow palette: Tailwind gray scale, softer than the title color */
+        .wave-fwd { color: #6b7280; }
+        .wave-back { color: #d1d5db; }
+        @media (prefers-color-scheme: dark) {
+            .wave-fwd { color: #9ca3af; }
+            .wave-back { color: #4b5563; }
+        }
         .header-logo { max-width: 200px; height: auto; flex: 1; text-align: center; }
         .header-name { line-height: 0; }
         .header-name { flex: 1; }
@@ -160,15 +167,17 @@
             <div class="header-name">
                 <a href="/" aria-label="CrossCurrents home" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;">
                     <svg class="header-icon" width="75" height="30" viewBox="-9 -5 138 55" fill="none" aria-hidden="true">
-                        <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
-                            <path d="M1 10 C 28 -3, 84 23, 119 2"/>
-                            <path d="M1 34 C 28 21, 84 47, 119 26"/>
+                        <g class="wave-fwd">
+                            <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+                                <path d="M1 10 C 28 -3, 84 23, 119 2"/>
+                                <path d="M1 34 C 28 21, 84 47, 119 26"/>
+                            </g>
+                            <g fill="currentColor">
+                                <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(119 2) rotate(-31)"/>
+                                <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(119 26) rotate(-31)"/>
+                            </g>
                         </g>
-                        <g fill="currentColor">
-                            <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(119 2) rotate(-31)"/>
-                            <path d="M0 -5.4 L10.5 0 L0 5.4 Z" transform="translate(119 26) rotate(-31)"/>
-                        </g>
-                        <g opacity="0.45">
+                        <g class="wave-back">
                             <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
                                 <path d="M1 22 C 28 9, 84 35, 119 14"/>
                                 <path d="M1 46 C 28 33, 84 59, 119 38"/>
