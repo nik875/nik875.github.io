@@ -127,7 +127,10 @@
             .profile-figure figcaption { color: #aaa; }
         }
         @media (max-width: 640px) {
-            .profile-figure { margin: 0 0 0.75rem 1rem; }
+            /* Too narrow for text to flow beside the photo: drop the photo below the text */
+            .about-content { display: flex; flex-direction: column; gap: 1rem; }
+            .about-content > * { margin: 0; }
+            .about-content .profile-figure { order: 99; float: none; margin: 1.5rem auto 0; }
             .profile-photo { width: 140px; height: 153px; }
         }
         .abstract { background: #f5f5f5; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0; }
