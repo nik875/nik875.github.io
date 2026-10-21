@@ -9,7 +9,7 @@ title: "About"
     <figcaption>Nikhil Kalidasu</figcaption>
 </figure>
 
-I'm Nikhil, a researcher, engineer, and genuine, organic human. I like writing fantasy, going on late-night runs, and dredging up long-forgotten books. I recycle old electronics into my home computing lab to give them a second life. I'm terribly afraid of bees (if one's in my hair, do *not* tell me!). I've devoted my life to AI and its applications, and I believe the final frontier for humanity is human.
+I'm Nikhil, a researcher, engineer, and genuine, organic human. I like writing fantasy, going on late-night runs, and dredging up long-forgotten books. I recycle old electronics into my home computing lab to give them a second life. I'm terribly afraid of bees and concerningly unafraid of actual danger. And despite devoting my life to AI, and I believe the final frontier for humanity is human.
 
 By my read, intelligence is not a hard problem. Our biological brains evolved in a world of predators and prey. Intelligence was never guaranteed to defeat stronger jaws or sharper claws. Our sister species were all wiped out, and we ourselves may have experienced [several genetic bottlenecks](https://en.wikipedia.org/wiki/Population_bottleneck#In_humans). Evolution selects for reproductive success, not intelligence. It took millions of years to produce monkeys surpassing the recursive self-improvement threshold, and even then our success was not guaranteed.
 
